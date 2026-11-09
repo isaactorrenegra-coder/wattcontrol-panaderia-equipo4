@@ -9,6 +9,4 @@ La EA2 se realiza en un equipo de cuatro integrantes con autorización del docen
 | Néstor | `stify362` |
 | Isaac | `isaactorrenegra-coder` |
 
-Negocio elegido: **panadería**. Antes de entregar, comprueben que el último dígito del documento de quien creó el repositorio sea 0 o 1 e incluyan solo ese dígito en el PDF de la EA2.
-
-Consulta el [reparto de tareas](REPARTO.md).
+Negocio elegido: **panadería** que termina en 1 o en 0. mi cédula (yo isaac) termina en ....691
