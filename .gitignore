@@ -1,0 +1,10 @@
+# Compilacion
+/wattcontrol
+/wattcontrol.exe
+*.o
+*.obj
+/build/
+/.vscode/*.log
+# Evidencias personales no versionadas
+/entregas/
+.DS_Store
