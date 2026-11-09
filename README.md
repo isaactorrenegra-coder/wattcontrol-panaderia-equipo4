@@ -1,59 +1,72 @@
-# WattControl
+# WattControl · EA2
 
-**Proyecto académico · C++17 · IU Digital de Antioquia**
+Gestor de energía en C++ para una panadería. El proyecto base ya compila y las tareas del equipo están en [Issues](https://github.com/isaactorrenegra-coder/wattcontrol-panaderia-equipo4/issues). Los mensajes `[PENDIENTE]` indican las funciones que cada integrante debe implementar.
 
-WattControl propone gestionar el consumo eléctrico de una panadería, priorizando la nevera y organizando el uso del horno y la amasadora.
+La EA2 pide el programa **WattControl**, el archivo principal `wattcontrol.cpp` y un repositorio público con el formato `wattcontrol-negocio-equipoN`. Este repositorio se llama `wattcontrol-panaderia-equipo4`. El ejecutable se genera como `wattcontrol.exe` en Windows y `wattcontrol` en Linux. [Consigna EA2](https://drive.google.com/file/d/1J3zqiLZY8tIf2bVERbjZFzMEACzXJX9l/view)
 
-## Equipo y flujo de trabajo
+| Integrante | Tareas |
+|---|---|
+| Daniela | A01–A03 · Constantes y cargas |
+| Gisell | B01–B03 · Precios, medidor y control de potencia |
+| Néstor | C01–C03 · Menú, simulación y resumen |
+| Isaac | A04, B04, C04 · UML, consumo y pruebas |
 
-| Integrante | Responsabilidad | Issues |
-|---|---|---|
-| Daniela | Configuración y modelo de cargas | A01–A03 |
-| Gisell | Mercado de energía, medidor y negocio | B01–B03 |
-| Nestor | Menú, simulación y reportes | C01–C03 |
-| Isaac | UML, integración y pruebas | A04, B04, C04 |
+## Orden de trabajo
 
-Las tres líneas iniciales avanzan en paralelo. Las tareas de integración comienzan cuando sus dependencias estén listas.
+El [diagrama UML editable](docs/02-tecnico/uml/diagrama-wattcontrol.drawio) ya está listo para usar desde el inicio. Revisen con Isaac las clases y sus métodos al empezar. Daniela, Gisell y Néstor pueden trabajar en paralelo mientras Isaac prepara los casos de prueba.
 
 ```mermaid
 flowchart TD
-    INICIO([Inicio])
-    INICIO --> A[A01 → A02 → A03 · Daniela]
-    INICIO --> B[B01 → B02 → B03 · Gisell]
-    INICIO --> C[C01 → C02 → C03 · Nestor]
-    A --> D[A04 · UML]
-    B --> D
-    B --> E[B04 · Integración]
-    D --> F[C04 · Pruebas y evidencias]
-    E --> F
-    C --> F
-    F --> G([Revisión y entrega])
+    Inicio([Inicio]) --> A["Daniela · A01 → A02 → A03<br/>Constantes y cargas"]
+    Inicio --> B1["Gisell · B01<br/>Precios y embalses"]
+    Inicio --> B2["Gisell · B02<br/>Medidor"]
+    Inicio --> C1["Néstor · C01<br/>Menú y validación"]
+    Inicio --> A4["Isaac · A04<br/>UML desde el inicio"]
+    A --> B3["Gisell · B03<br/>Decisiones y potencia"]
+    B3 --> B4["Isaac · B04<br/>Registro de consumo"]
+    B2 --> B4
+    B1 --> C23["Néstor · C02 → C03<br/>Simulación y resumen"]
+    B4 --> C23
+    C1 --> C4["Isaac · C04<br/>Pruebas y evidencias"]
+    A4 --> C4
+    C23 --> C4
+    C4 --> Fin([Revisión final y entrega individual])
 ```
 
-**Para cada tarea:** abre tu Issue → crea una rama → desarrolla y prueba → abre una Pull Request hacia `main` → atiende la revisión. No trabajes directamente sobre `main`.
+Néstor puede programar la opción 1 del menú desde el inicio y verificar la opción 2 cuando Gisell integre B03. Antes de preparar el PDF, Isaac comprueba que el UML coincida con el código integrado y exporta esa versión. Consulta el [reparto](docs/01-equipo/REPARTO.md) para abrir cada tarea.
 
-Consulta el [reparto detallado y las dependencias](docs/01-equipo/REPARTO.md) antes de empezar. Allí también se explican los archivos compartidos y las reglas del caso.
+## Trabajar en una tarea
 
-> **Pendiente de confirmar:** la consigna indica un máximo de tres integrantes y este equipo contempla cuatro. Confirmen la autorización con el instructor.
+1. Abre tu issue en el [reparto](docs/01-equipo/REPARTO.md) y revisa qué necesitas antes de empezar.
+2. Trae los cambios de GitHub y crea tu rama desde `origin/main`. El ejemplo es para la tarea A01.
 
-## Empezar
+   ```bash
+   git fetch origin
+   git switch -c tarea/a01-constantes origin/main
+   ```
+
+3. Resuelve la tarea, compila y registra los cambios con tu cuenta. La EA2 pide **al menos tres commits propios por integrante** en el historial de entrega.
+
+   ```bash
+   git status
+   git add include/configuracion.h docs/02-tecnico/DECISIONES.md
+   git commit -m "Revisar constantes de la panadería"
+   ```
+
+   Cambia los archivos y el mensaje según tu tarea.
+
+4. Sube tu rama con `git push -u origin HEAD` y abre un Pull Request hacia `main`. Escribe `Closes #4` en la descripción si tu PR completa la issue #4. Cuando aprueben el PR, intégrenlo conservando los commits. Para la siguiente tarea, repite el paso 2.
+
+## Compilar y ejecutar
+
+Si aún no tienes el repositorio, abre una terminal con Git y g++ disponibles. En Windows, usa la terminal Bash de MSYS2 desde VS Code.
 
 ```bash
 git clone https://github.com/isaactorrenegra-coder/wattcontrol-panaderia-equipo4.git
 cd wattcontrol-panaderia-equipo4
 bash scripts/compilar.sh
-./wattcontrol
 ```
 
-## Documentación
+Ejecuta `./wattcontrol.exe` en Windows o `./wattcontrol` en Linux. Para comprobar tu correo de autor, usa `git config user.email` y verifica que corresponda a tu cuenta de GitHub.
 
-- [Integrantes](docs/01-equipo/EQUIPO.md)
-- [Reparto y flujo detallado](docs/01-equipo/REPARTO.md)
-- [Decisiones técnicas](docs/02-tecnico/DECISIONES.md)
-- [Diagrama UML](docs/02-tecnico/uml/LEEME.md)
-- [Pruebas](docs/03-pruebas/PRUEBAS.md)
-- [Guía de entrega](docs/04-entrega/GUIA_ENTREGA.md)
-
----
-
-**WattControl · Proyecto académico de Programación Orientada a Objetos**
+[Reglas de la panadería](docs/02-tecnico/DECISIONES.md) · [Pruebas](docs/03-pruebas/PRUEBAS.md) · [Entrega individual](docs/04-entrega/GUIA_ENTREGA.md)

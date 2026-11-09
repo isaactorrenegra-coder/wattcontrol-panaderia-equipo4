@@ -1,7 +1,7 @@
 # Diagrama UML
 
-Abrir el archivo editable `diagrama-borrador.drawio` con diagrams.net (draw.io).
+Abrir [diagrama-wattcontrol.drawio](diagrama-wattcontrol.drawio) con diagrams.net (draw.io) al iniciar el trabajo. El archivo está listo para acordar las responsabilidades de las seis clases y las firmas de sus métodos. Si el equipo cambia esas firmas durante la implementación, actualizar el diagrama.
 
-El diagrama debe revisarse contra el código final: clases, atributos, métodos, visibilidad, multiplicidades, herencia y relaciones. El método virtual puro y los métodos `override` muestran el polimorfismo; no hace falta inventar una relación UML adicional para representarlo.
+El diagrama muestra la herencia de las cargas, la agregación de cargas en `Negocio`, la composición con `Medidor` y la asociación con `Mercado`. El método virtual puro `debeEncender()` y sus implementaciones con `override` representan el polimorfismo.
 
-Exportar el diagrama definitivo a PNG o PDF para incluirlo en el informe. No presentar el archivo como final mientras conserve elementos de borrador.
+Antes de preparar el PDF, comparar clases, firmas, visibilidad y multiplicidades con el código integrado. Exportar la versión validada a PNG o PDF para el informe.
