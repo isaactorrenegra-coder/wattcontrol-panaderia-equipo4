@@ -4,7 +4,7 @@
 
 WattControl propone gestionar el consumo eléctrico de una panadería, manteniendo la nevera como equipo prioritario y organizando el uso del horno y la amasadora.
 
-> **Estado:** proyecto en desarrollo. Algunas funciones todavía están pendientes; que compile no significa que todos los requisitos estén terminados.
+> **NOTA:** PARA ESTA **PLANTILLA** DEL REPOSITORIO Y REPARTICIÓN DE TAREAS UTILIZAMOS CHATGPT CON **MCP** DE GITHUB.
 
 ## ¿Qué debes hacer si eres integrante?
 
