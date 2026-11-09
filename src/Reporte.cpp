@@ -1,11 +1,26 @@
-#include "Negocio.h"
+#include "Reporte.h"
 #include <iostream>
+#include <iomanip>
 
-void Negocio::mostrarResumen() const {
-    // TODO C03: si no se simulo, indicarlo. De lo contrario:
-    // - horas y kWh por carga, precio con gestor, costo sin gestor,
-    // - ahorro COP = costo sin gestor - costo con gestor,
-    // - % = 100 * ahorro / costo sin gestor (controlar division por cero),
-    // - mostrar fallas, emergencia, produccion incompleta.
-    std::cout << "[PENDIENTE C03] Resumen de la ultima simulacion\n";
+// Implementación de la función de reporte
+void generarReporteConsumo(double energiaTotalKWh, double costoTotalCOP) {
+    std::cout << "\n==============================================" << std::endl;
+    std::cout << "         REPORTE FINAL DE CONSUMO - WATTCONTROL " << std::endl;
+    std::cout << "==============================================" << std::endl;
+    
+    std::cout << std::fixed << std::setprecision(2);
+    
+    std::cout << " * Energia total consumida : " << energiaTotalKWh << " kWh" << std::endl;
+    std::cout << " * Costo total estimado    : $" << costoTotalCOP << " COP" << std::endl;
+    
+    if (energiaTotalKWh > 0) {
+        double costoPromedio = costoTotalCOP / energiaTotalKWh;
+        std::cout << " * Costo promedio por kWh  : $" << costoPromedio << " COP/kWh" << std::endl;
+    } else {
+        std::cout << " * Costo promedio por kWh  : $0.00 COP/kWh" << std::endl;
+    }
+
+    std::cout << "==============================================" << std::endl;
+    std::cout << " Estado del reporte: Generado correctamente." << std::endl;
+    std::cout << "==============================================\n" << std::endl;
 }
