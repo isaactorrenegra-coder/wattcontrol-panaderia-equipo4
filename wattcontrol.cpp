@@ -30,6 +30,9 @@ int main() {
                   << "4. Ver resumen de la ultima simulacion\n"
                   << "0. Salir\nOpcion: ";
         if (!(std::cin >> opcion)) {
+            if (std::cin.eof()) {
+                return 0;
+            }
             std::cin.clear();
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
             opcion = -1;
