@@ -1,6 +1,6 @@
 # Diagrama UML
 
-Abrir [diagrama-wattcontrol.drawio](diagrama-wattcontrol.drawio) con diagrams.net (draw.io) al iniciar el trabajo. El archivo está listo para acordar las responsabilidades de las seis clases y las firmas de sus métodos. Si el equipo cambia esas firmas durante la implementación, actualizar el diagrama.
+Consultar el [diagrama de WattControl en PNG](diagrama-wattcontrol.png) al iniciar el trabajo. El archivo incluye el diseño editable. Para actualizarlo, descargarlo, abrirlo en diagrams.net (draw.io) y exportarlo de nuevo como PNG con la opción de incluir una copia del diagrama.
 
 El diagrama muestra la herencia de las cargas, la agregación de cargas en `Negocio`, la composición con `Medidor` y la asociación con `Mercado`. El método virtual puro `debeEncender()` y sus implementaciones con `override` representan el polimorfismo.
 

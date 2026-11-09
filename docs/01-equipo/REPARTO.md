@@ -1,6 +1,6 @@
 # Reparto de la EA2
 
-Cada enlace abre la tarea con sus criterios. Daniela puede empezar por A01, Gisell por B01 o B02, Néstor por C01 e Isaac por A04 con el [UML editable](../02-tecnico/uml/diagrama-wattcontrol.drawio) ya disponible.
+Cada enlace abre la tarea con sus criterios. Daniela puede empezar por A01, Gisell por B01 o B02, Néstor por C01 e Isaac por A04 con el [UML en PNG](../02-tecnico/uml/diagrama-wattcontrol.png) ya disponible.
 
 | Responsable | Tarea | Antes de terminarla |
 |---|---|---|

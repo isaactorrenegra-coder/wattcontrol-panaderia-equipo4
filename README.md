@@ -13,7 +13,7 @@ La EA2 pide el programa **WattControl**, el archivo principal `wattcontrol.cpp` 
 
 ## Orden de trabajo
 
-El [diagrama UML editable](docs/02-tecnico/uml/diagrama-wattcontrol.drawio) ya está listo para usar desde el inicio. Revisen con Isaac las clases y sus métodos al empezar. Daniela, Gisell y Néstor pueden trabajar en paralelo mientras Isaac prepara los casos de prueba.
+El [diagrama UML](#diagrama-uml) ya está listo para usar desde el inicio. Revisen con Isaac las clases y sus métodos al empezar. Daniela, Gisell y Néstor pueden trabajar en paralelo mientras Isaac prepara los casos de prueba.
 
 ```mermaid
 flowchart TD
@@ -34,6 +34,12 @@ flowchart TD
 ```
 
 Néstor puede programar la opción 1 del menú desde el inicio y verificar la opción 2 cuando Gisell integre B03. Antes de preparar el PDF, Isaac comprueba que el UML coincida con el código integrado y exporta esa versión. Consulta el [reparto](docs/01-equipo/REPARTO.md) para abrir cada tarea.
+
+## Diagrama UML
+
+[![Diagrama de clases de WattControl Panadería](docs/02-tecnico/uml/diagrama-wattcontrol.png)](docs/02-tecnico/uml/diagrama-wattcontrol.png)
+
+Abre la imagen para ampliarla. Para editar el diagrama, descarga el PNG y ábrelo en diagrams.net.
 
 ## Trabajar en una tarea
 
