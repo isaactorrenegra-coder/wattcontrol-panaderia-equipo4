@@ -1,0 +1,13 @@
+slug|title|owner|area|body_file
+A01|[A01] Configurar constantes oficiales de la panaderia|integrante-1|modelo|a01.md
+A02|[A02] Implementar clase abstracta Carga y estado de consumo|integrante-1|modelo|a02.md
+A03|[A03] Implementar herencia y reglas de cargas|integrante-1|modelo|a03.md
+A04|[A04] Revisar diagrama UML y relaciones con el codigo final|integrante-4|documentacion|a04.md
+B01|[B01] Implementar Mercado y precios aleatorios por franja|integrante-2|negocio|b01.md
+B02|[B02] Implementar Medidor de kWh y costo en COP|integrante-2|negocio|b02.md
+B03|[B03] Aplicar agregacion, asociacion y regla de potencia|integrante-2|negocio|b03.md
+B04|[B04] Registrar consumos y preparar estado del resumen|integrante-4|negocio|b04.md
+C01|[C01] Crear menu y validacion de lectura manual|integrante-3|interfaz|c01.md
+C02|[C02] Programar simulacion 24 h con rand, break y continue|integrante-3|simulacion|c02.md
+C03|[C03] Mostrar resumen, ahorro y produccion incompleta|integrante-3|simulacion|c03.md
+C04|[C04] Ejecutar seis pruebas y organizar evidencia final|integrante-4|documentacion|c04.md
