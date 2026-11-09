@@ -18,10 +18,10 @@ WattControl propone gestionar el consumo eléctrico de una panadería, mantenien
 
 | Integrante | Issues | ¿De qué se encarga? | Archivos principales |
 |---|---|---|---|
-| **1** | A01–A03 | Configuración, clase base `Carga`, herencia, polimorfismo y reglas de encendido. | `configuracion.h`, `Carga*.h`, `Carga*.cpp` |
-| **2** | B01–B03 | Mercado de energía, medidor, relaciones entre clases y potencia contratada. | Archivos `Mercado*`, `Medidor*` y coordinación de `Negocio`. |
-| **3** | C01–C03 | Menú, validaciones, simulación de 24 horas y reportes. | `wattcontrol.cpp`, `Simulacion.cpp`, `Reporte.cpp` |
-| **4** | A04, B04, C04 | UML final, integración del consumo, pruebas y evidencias. | `docs/uml/`, `Negocio.h/.cpp`, `docs/pruebas/` |
+| **1 Daniela** | A01–A03 | Configuración, clase base `Carga`, herencia, polimorfismo y reglas de encendido. | `configuracion.h`, `Carga*.h`, `Carga*.cpp` |
+| **2 Gisell** | B01–B03 | Mercado de energía, medidor, relaciones entre clases y potencia contratada. | Archivos `Mercado*`, `Medidor*` y coordinación de `Negocio`. |
+| **3 Nestor** | C01–C03 | Menú, validaciones, simulación de 24 horas y reportes. | `wattcontrol.cpp`, `Simulacion.cpp`, `Reporte.cpp` |
+| **4 Isaac** | A04, B04, C04 | UML final, integración del consumo, pruebas y evidencias. | `docs/uml/`, `Negocio.h/.cpp`, `docs/pruebas/` |
 
 **Antes de empezar:** revisa la descripción de tu issue. El integrante 4 depende de entregas de los demás; además, `Negocio.h` y `Negocio.cpp` requieren coordinación entre quienes los modifican. El detalle y las dependencias están en [docs/REPARTO.md](docs/REPARTO.md).
 
