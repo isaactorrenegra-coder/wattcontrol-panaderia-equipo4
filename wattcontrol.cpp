@@ -6,6 +6,7 @@
 #include "CargaAplazable.h"
 #include "Negocio.h"
 #include "Mercado.h"
+#include "Reporte.h"
 
 int main() {
     std::srand(SEMILLA_SIMULACION);
