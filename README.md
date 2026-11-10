@@ -7,22 +7,22 @@ La EA2 pide el programa **WattControl**, el archivo principal `wattcontrol.cpp` 
 | Integrante | Tareas |
 |---|---|
 | Daniela | A01–A03 · Constantes y cargas |
-| Gisell | B01–B03 · Precios, medidor y control de potencia |
+| Gisell | B01 · Precios y embalses |
 | Néstor | C01–C03 · Menú, simulación y resumen |
-| Isaac | A04, B04, C04 · UML, consumo y pruebas |
+| Isaac | A04, B02–B04, C04 · UML, medidor, control de potencia, consumo y pruebas |
 
 ## Orden de trabajo
 
-El [diagrama UML editable](docs/02-tecnico/uml/diagrama-wattcontrol.drawio) ya está listo para usar desde el inicio. Revisen con Isaac las clases y sus métodos al empezar. Daniela, Gisell y Néstor pueden trabajar en paralelo mientras Isaac prepara los casos de prueba.
+El UML queda pendiente de validación con el código integrado. Daniela puede empezar por A01, Gisell por B01, Néstor por C01 e Isaac por A04 y B02.
 
 ```mermaid
 flowchart TD
     Inicio([Inicio]) --> A["Daniela · A01 → A02 → A03<br/>Constantes y cargas"]
     Inicio --> B1["Gisell · B01<br/>Precios y embalses"]
-    Inicio --> B2["Gisell · B02<br/>Medidor"]
+    Inicio --> B2["Isaac · B02<br/>Medidor"]
     Inicio --> C1["Néstor · C01<br/>Menú y validación"]
     Inicio --> A4["Isaac · A04<br/>UML desde el inicio"]
-    A --> B3["Gisell · B03<br/>Decisiones y potencia"]
+    A --> B3["Isaac · B03<br/>Decisiones y potencia"]
     B3 --> B4["Isaac · B04<br/>Registro de consumo"]
     B2 --> B4
     B1 --> C23["Néstor · C02 → C03<br/>Simulación y resumen"]
@@ -33,7 +33,7 @@ flowchart TD
     C4 --> Fin([Revisión final y entrega individual])
 ```
 
-Néstor puede programar la opción 1 del menú desde el inicio y verificar la opción 2 cuando Gisell integre B03. Antes de preparar el PDF, Isaac comprueba que el UML coincida con el código integrado y exporta esa versión. Consulta el [reparto](docs/01-equipo/REPARTO.md) para abrir cada tarea.
+Néstor puede programar la opción 1 del menú desde el inicio y verificar la opción 2 cuando Isaac integre B03. Para la simulación, Néstor necesita los precios y embalses de Gisell (B01) y el registro de consumo de Isaac (B04). Antes de preparar el PDF, Isaac comprueba que el UML coincida con el código integrado y exporta esa versión. Consulta el [reparto](docs/01-equipo/REPARTO.md) para abrir cada tarea.
 
 ## Trabajar en una tarea
 

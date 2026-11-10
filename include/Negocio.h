@@ -24,6 +24,6 @@ public:
     bool agregarCarga(Carga* carga);
     void evaluarCargas(int hora, double precioCOPkWh, double embalsesPct);
     void registrarConsumoHora(double precioCOPkWh);
-    void simularDia();                     // Implementa Integrante 3 en Simulacion.cpp
-    void mostrarResumen() const;           // Implementa Integrante 3 en Reporte.cpp
+    void simularDia();                     // C02
+    void mostrarResumen() const;           // C03
 };
