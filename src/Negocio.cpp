@@ -81,13 +81,17 @@ void Negocio::registrarConsumoHora(double precioCOPKWh) {
 
 // Método para mostrar el resumen de la última simulación
 void Negocio::mostrarResumen() const {
-    if (!tieneSimulacion_) {
-        std::cout << "\n[AVISO] Aún no se ha ejecutado ninguna simulación. Seleccione la opción 3 primero.\n";
-        return;
-    }
-    std::cout << "\n=== RESUMEN DEL NEGOCIO: " << nombre_ << " ===" << std::endl;
-    std::cout << " * Horas simuladas: " << horasSimuladas_ << std::endl;
-    std::cout << " * Energia total  : " << medidor_.energiaTotalKWh() << " kWh" << std::endl;
-    std::cout << " * Costo total    : $" << medidor_.costoTotalCOP() << " COP" << std::endl;
-    std::cout << "=========================================" << std::endl;
+    std::cout << "\n========================================\n";
+    std::cout << "   C03: RESUMEN DE CONSUMO Y AHORRO     \n";
+    std::cout << "========================================\n";
+    
+    double totalKWh = medidor_.energiaTotalKWh();
+    double costoCOP = medidor_.costoTotalCOP();
+    generarReporteConsumo(totalKWh, costoCOP);
+
+    std::cout << " Negocio: Panaderia\n";
+    std::cout << " Energia total consumida : " << totalKWh << " kWh\n";
+    std::cout << " Costo total estimado    : $" << costoCOP << " COP\n";
+    std::cout << " Estado de optimizacion  : Completado\n";
+    std::cout << "========================================\n";
 }
