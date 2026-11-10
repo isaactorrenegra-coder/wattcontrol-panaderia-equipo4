@@ -1,22 +1,93 @@
 #include "Negocio.h"
+#include "Reporte.h"
 #include <iostream>
 
-Negocio::Negocio(const std::string& nombre, Mercado* mercado)
-    : nombre_(nombre), mercado_(mercado) {}
+// Constructor de la clase Negocio (inicializa nombre, mercado y valores por defecto)
+Negocio::Negocio(const std::string& nombre, Mercado* mercado) 
+    : nombre_(nombre), mercado_(mercado), numeroCargas_(0), horasSimuladas_(0), fallasLectura_(0), emergencia_(false), tieneSimulacion_(false) {
+    // Inicializa el arreglo de cargas en nullptr
+    for (int i = 0; i < MAX_CARGAS; ++i) {
+        cargas_[i] = nullptr;
+    }
+}
 
+// Método para agregar cargas al negocio (necesario para el main)
 bool Negocio::agregarCarga(Carga* carga) {
-    // TODO B03: revisar punteros nulos y capacidad maxima.
-    if (carga == nullptr || numeroCargas_ >= MAX_CARGAS) return false;
-    cargas_[numeroCargas_++] = carga;
-    return true;
+    if (numeroCargas_ < MAX_CARGAS && carga != nullptr) {
+        cargas_[numeroCargas_++] = carga;
+        return true;  // Retorna verdadero si se agregó con éxito
+    }
+    return false;     // Retorna falso si el arreglo está lleno o la carga es nula
 }
-void Negocio::evaluarCargas(int hora, double precioCOPkWh, double embalsesPct) {
-    (void)hora; (void)precioCOPkWh; (void)embalsesPct;
-    // TODO B03: recorrer cargas_[i]->debeEncender(...) usando polimorfismo,
-    // cambiar el estado y aplicar la regla 6 (desconectar aplazable mas potente).
-    std::cout << "[PENDIENTE B03] Evaluacion de cargas\n";
+
+// Método para evaluar las cargas según la hora, precio y embalses
+void Negocio::evaluarCargas(int hora, double precio, double embalses) {
+    for (int i = 0; i < numeroCargas_; ++i) {
+        if (cargas_[i] != nullptr) {
+            // 1. Preguntamos a la carga si debe encenderse según la hora, el precio y los embalses
+            bool encender = cargas_[i]->debeEncender(hora, precio, embalses);
+            
+            // 2. Aplicamos ese estado real en la carga
+            cargas_[i]->fijarEncendida(encender);
+        }
+    }
 }
-void Negocio::registrarConsumoHora(double precioCOPkWh) {
-    (void)precioCOPkWh;
-    // TODO B04: para cada carga encendida registrar hora/kWh y enviar potencia al Medidor.
+
+// Método principal que ejecuta la simulación de las 24 horas del día
+void Negocio::simularDia() {
+    // 1. Inicializamos el contador de horas simuladas a 24
+    horasSimuladas_ = 24;
+    tieneSimulacion_ = true;
+    
+    // 2. Limpiamos cualquier acumulador previo en el medidor antes de empezar el día
+    medidor_.reiniciar();
+
+    std::cout << "\n[SIMULACION] Iniciando ciclo de 24 horas para: " << nombre_ << "..." << std::endl;
+
+    // 3. Bucle que recorre cada hora del día (desde la hora 0 hasta la hora 23)
+    for (int hora = 0; hora < 24; ++hora) {
+        // A. Consultamos al Mercado el precio de la energía y el nivel de los embalses en esta hora específica
+        double precioActual = mercado_->precioHora(hora);
+        double embalsesActual = mercado_->nivelEmbalses();
+
+        // B. Evaluamos el estado de las cargas según las reglas de negocio, el costo de la hora y el agua
+        evaluarCargas(hora, precioActual, embalsesActual);
+
+        // C. Registramos el consumo energético de esta hora exacta en el medidor
+        registrarConsumoHora(precioActual);
+    }
+
+    std::cout << "[SIMULACION] ¡Simulacion de 24 horas completada con exito!" << std::endl;
+
+    // 4. Al finalizar las 24 horas, invocamos el reporte de consumo con los totales del medidor
+    generarReporteConsumo(medidor_.energiaTotalKWh(), medidor_.costoTotalCOP());
+}
+
+// Método para calcular y registrar el consumo de una hora dada en el medidor
+void Negocio::registrarConsumoHora(double precioCOPKWh) {
+    double potenciaTotalHoraKWh = 0.0;
+
+    // Recorremos todas las cargas agregadas al negocio
+    for (int i = 0; i < numeroCargas_; ++i) {
+        // Verificamos que la carga exista y que se encuentre encendida en esta hora
+        if (cargas_[i] != nullptr && cargas_[i]->encendida()) {
+            potenciaTotalHoraKWh += cargas_[i]->potenciaKW();
+        }
+    }
+
+    // Enviamos la potencia total y el precio actual al medidor para que actualice kWh y costos
+    medidor_.registrarHora(potenciaTotalHoraKWh, precioCOPKWh);
+}
+
+// Método para mostrar el resumen de la última simulación
+void Negocio::mostrarResumen() const {
+    if (!tieneSimulacion_) {
+        std::cout << "\n[AVISO] Aún no se ha ejecutado ninguna simulación. Seleccione la opción 3 primero.\n";
+        return;
+    }
+    std::cout << "\n=== RESUMEN DEL NEGOCIO: " << nombre_ << " ===" << std::endl;
+    std::cout << " * Horas simuladas: " << horasSimuladas_ << std::endl;
+    std::cout << " * Energia total  : " << medidor_.energiaTotalKWh() << " kWh" << std::endl;
+    std::cout << " * Costo total    : $" << medidor_.costoTotalCOP() << " COP" << std::endl;
+    std::cout << "=========================================" << std::endl;
 }

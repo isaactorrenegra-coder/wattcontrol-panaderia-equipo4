@@ -1,128 +1,78 @@
-# WattControl
+# WattControl · EA2
 
-**Proyecto académico · C++17 · IU Digital de Antioquia**
+Gestor de energía en C++ para una panadería. El proyecto base ya compila y las tareas del equipo están en [Issues](https://github.com/isaactorrenegra-coder/wattcontrol-panaderia-equipo4/issues). Los mensajes `[PENDIENTE]` indican las funciones que cada integrante debe implementar.
 
-WattControl propone gestionar el consumo eléctrico de una panadería, manteniendo la nevera como equipo prioritario y organizando el uso del horno y la amasadora.
+La EA2 pide el programa **WattControl**, el archivo principal `wattcontrol.cpp` y un repositorio público con el formato `wattcontrol-negocio-equipoN`. Este repositorio se llama `wattcontrol-panaderia-equipo4`. El ejecutable se genera como `wattcontrol.exe` en Windows y `wattcontrol` en Linux. [Consigna EA2](https://drive.google.com/file/d/1J3zqiLZY8tIf2bVERbjZFzMEACzXJX9l/view)
 
-> **NOTA:** PARA ESTA **PLANTILLA** DEL REPOSITORIO Y REPARTICIÓN DE TAREAS UTILIZAMOS CHATGPT CON **MCP** DE GITHUB.
+| Integrante | Tareas |
+|---|---|
+| Daniela | A01–A03 · Constantes y cargas |
+| Gisell | B01 · Precios y embalses |
+| Néstor | C01–C03 · Menú, simulación y resumen |
+| Isaac | A04, B02–B04, C04 · UML, medidor, control de potencia, consumo y pruebas |
 
-## ¿Qué debes hacer si eres integrante?
+## Orden de trabajo
 
-1. Consulta el [reparto de tareas](docs/REPARTO.md) y ubica tus issues en GitHub Projects.
-2. Lee la issue asignada: ahí están el objetivo y los archivos que debes revisar.
-3. Crea una rama y trabaja allí. **No modifiques directamente `main`.**
-4. Prueba tus cambios y súbelos a GitHub.
-5. Abre una Pull Request (PR) para que otro integrante los revise.
-
-## Reparto del equipo
-
-| Integrante | Issues | ¿De qué se encarga? | Archivos principales |
-|---|---|---|---|
-| **1 Daniela** | A01–A03 | Configuración, clase base `Carga`, herencia, polimorfismo y reglas de encendido. | `configuracion.h`, `Carga*.h`, `Carga*.cpp` |
-| **2 Gisell** | B01–B03 | Mercado de energía, medidor, relaciones entre clases y potencia contratada. | Archivos `Mercado*`, `Medidor*` y coordinación de `Negocio`. |
-| **3 Nestor** | C01–C03 | Menú, validaciones, simulación de 24 horas y reportes. | `wattcontrol.cpp`, `Simulacion.cpp`, `Reporte.cpp` |
-| **4 Isaac** | A04, B04, C04 | UML final, integración del consumo, pruebas y evidencias. | `docs/uml/`, `Negocio.h/.cpp`, `docs/pruebas/` |
-
-**Antes de empezar:** revisa la descripción de tu issue. El integrante 4 depende de entregas de los demás; además, `Negocio.h` y `Negocio.cpp` requieren coordinación entre quienes los modifican. El detalle y las dependencias están en [docs/REPARTO.md](docs/REPARTO.md).
-
-> **Nota:** la guía de la actividad indica un máximo de tres integrantes, pero este reparto contempla cuatro. Confirmen con el docente si está autorizado.
-
-## Cómo trabajar con Git y GitHub
-
-Este es el ciclo que debes repetir por cada tarea:
+El [diagrama UML](#diagrama-uml) ya está listo para usar desde el inicio. Daniela puede empezar por A01, Gisell por B01, Néstor por C01 e Isaac por el UML (A04) y el medidor (B02).
 
 ```mermaid
-flowchart LR
-    A["1. Actualiza<br/>main"] --> B["2. Crea una<br/>rama"]
-    B --> C["3. Programa y<br/>guarda cambios"]
-    C --> D["4. Sube y abre<br/>una Pull Request"]
-    D --> E{"¿Aprobada?"}
-    E -- "No: corrige" --> C
-    E -- "Sí" --> F["5. Integrar<br/>en main"]
+flowchart TD
+    Inicio([Inicio]) --> A["Daniela · A01 → A02 → A03<br/>Constantes y cargas"]
+    Inicio --> B1["Gisell · B01<br/>Precios y embalses"]
+    Inicio --> B2["Isaac · B02<br/>Medidor"]
+    Inicio --> C1["Néstor · C01<br/>Menú y validación"]
+    Inicio --> A4["Isaac · A04<br/>UML desde el inicio"]
+    A --> B3["Isaac · B03<br/>Decisiones y potencia"]
+    B3 --> B4["Isaac · B04<br/>Registro de consumo"]
+    B2 --> B4
+    B1 --> C23["Néstor · C02 → C03<br/>Simulación y resumen"]
+    B4 --> C23
+    C1 --> C4["Isaac · C04<br/>Pruebas y evidencias"]
+    A4 --> C4
+    C23 --> C4
+    C4 --> Fin([Revisión final y entrega individual])
 ```
 
-### 1. Descargar el proyecto (solo la primera vez)
+Néstor puede programar la opción 1 del menú desde el inicio y verificar la opción 2 cuando Isaac integre B03. Para la simulación, Néstor necesita los precios y embalses de Gisell (B01) y el registro de consumo de Isaac (B04). Antes de preparar el PDF, Isaac comprueba que el UML coincida con el código integrado y exporta esa versión. Consulta el [reparto](docs/01-equipo/REPARTO.md) para abrir cada tarea.
 
-Necesitas Git y un compilador C++17. Abre una terminal:
+## Diagrama UML
+
+[![Diagrama de clases de WattControl Panadería](docs/02-tecnico/uml/diagrama-wattcontrol.png)](docs/02-tecnico/uml/diagrama-wattcontrol.png)
+
+Abre la imagen para ampliarla. Para editar el diagrama, descarga el PNG y ábrelo en diagrams.net.
+
+## Trabajar en una tarea
+
+1. Abre tu issue en el [reparto](docs/01-equipo/REPARTO.md) y revisa qué necesitas antes de empezar.
+2. Trae los cambios de GitHub y crea tu rama desde `origin/main`. El ejemplo es para la tarea A01.
+
+   ```bash
+   git fetch origin
+   git switch -c tarea/a01-constantes origin/main
+   ```
+
+3. Resuelve la tarea, compila y registra los cambios con tu cuenta. La EA2 pide **al menos tres commits propios por integrante** en el historial de entrega.
+
+   ```bash
+   git status
+   git add include/configuracion.h docs/02-tecnico/DECISIONES.md
+   git commit -m "Revisar constantes de la panadería"
+   ```
+
+   Cambia los archivos y el mensaje según tu tarea.
+
+4. Sube tu rama con `git push -u origin HEAD` y abre un Pull Request hacia `main`. Escribe `Closes #4` en la descripción si tu PR completa la issue #4. Cuando aprueben el PR, intégrenlo conservando los commits. Para la siguiente tarea, repite el paso 2.
+
+## Compilar y ejecutar
+
+Si aún no tienes el repositorio, abre una terminal con Git y g++ disponibles. En Windows, usa la terminal Bash de MSYS2 desde VS Code.
 
 ```bash
 git clone https://github.com/isaactorrenegra-coder/wattcontrol-panaderia-equipo4.git
 cd wattcontrol-panaderia-equipo4
-```
-
-### 2. Crear una rama para tu tarea
-
-Antes de empezar, actualiza tu copia y crea una rama con un nombre relacionado con tu issue:
-
-```bash
-git checkout main
-git pull origin main
-git checkout -b feat/mi-tarea
-```
-
-- `git checkout main`: cambia a la rama principal.
-- `git pull origin main`: trae los cambios recientes del repositorio.
-- `git checkout -b feat/mi-tarea`: crea tu rama y entra en ella. Cambia `mi-tarea` por el nombre de tu trabajo.
-
-### 3. Guardar y subir tus cambios
-
-Cuando termines una parte de tu trabajo:
-
-```bash
-git status
-git add ruta/del/archivo
-git commit -m "feat: describe el cambio"
-git push -u origin feat/mi-tarea
-```
-
-- `git status`: muestra qué archivos modificaste.
-- `git add`: selecciona los archivos que vas a guardar.
-- `git commit`: registra tus cambios con un mensaje.
-- `git push`: publica tu rama en GitHub. La primera vez usa `-u`; después basta con `git push`.
-
-Repite el proceso de guardar y subir cuando avances. Usa mensajes que describan el cambio real.
-
-### 4. Abrir una Pull Request
-
-En GitHub, entra en **Pull requests → New pull request**:
-
-1. En **base**, elige `main`.
-2. En **compare**, elige tu rama.
-3. Explica brevemente qué hiciste y solicita revisión a otro integrante.
-4. Crea la PR y atiende los comentarios.
-
-Si te piden correcciones, modifica los archivos en la misma rama y vuelve a ejecutar `git add`, `git commit` y `git push`. La PR se actualizará automáticamente. Cuando esté aprobada y probada, el integrante autorizado podrá integrarla en `main`.
-
-**No hagas merge de tu propia PR sin revisión.**
-
-### Palabras que verás con frecuencia
-
-- **Repositorio:** carpeta del proyecto compartida en GitHub.
-- **Rama (branch):** espacio separado para trabajar sin afectar `main`.
-- **Commit:** registro de tus cambios.
-- **Push:** envío de tus commits a GitHub.
-- **Pull Request (PR):** solicitud para revisar e integrar tu trabajo.
-- **Issue:** tarea o problema asignado.
-
-## Probar el proyecto
-
-Desde la carpeta principal, ejecuta:
-
-```bash
 bash scripts/compilar.sh
-./wattcontrol
 ```
 
-En Windows, el ejecutable puede llamarse `wattcontrol.exe`. La compilación no sustituye las pruebas funcionales.
+Ejecuta `./wattcontrol.exe` en Windows o `./wattcontrol` en Linux. Para comprobar tu correo de autor, usa `git config user.email` y verifica que corresponda a tu cuenta de GitHub.
 
-## Documentación útil
-
-- [Integrantes](docs/EQUIPO.md)
-- [Reparto detallado, issues y dependencias](docs/REPARTO.md)
-- [Guía de Git y GitHub](docs/GUIA_GITHUB.md)
-- [Guía de entrega](docs/GUIA_ENTREGA.md)
-- [Decisiones técnicas](docs/DECISIONES.md)
-
----
-
-**WattControl · Proyecto académico de Programación Orientada a Objetos**
+[Reglas de la panadería](docs/02-tecnico/DECISIONES.md) · [Pruebas](docs/03-pruebas/PRUEBAS.md) · [Entrega individual](docs/04-entrega/GUIA_ENTREGA.md)

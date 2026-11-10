@@ -1,35 +1,24 @@
-# Reparto de trabajo
+# Reparto de la EA2
 
-Cada integrante tiene tres issues. Consulta la issue antes de modificar archivos y coordina los cambios compartidos.
+Cada enlace abre la tarea con sus criterios. Daniela puede empezar por A01, Gisell por B01, Néstor por C01 e Isaac por B02 y A04 con el [UML en PNG](../02-tecnico/uml/diagrama-wattcontrol.png) ya disponible.
 
-| Integrante | Issues | Responsabilidad | Archivos principales |
-|---|---|---|---|
-| **Daniela (1)** | A01–A03 | Configuración, clase abstracta `Carga`, herencia y polimorfismo | `include/configuracion.h`, `include/Carga*.h`, `src/Carga*.cpp` |
-| **Gisell (2)** | B01–B03 | Mercado, medidor, relaciones entre clases y límite de potencia | `Mercado*`, `Medidor*`, `include/Negocio.h`, `src/Negocio.cpp` |
-| **Nestor (3)** | C01–C03 | Menú, validaciones, simulación de 24 horas y reportes | `wattcontrol.cpp`, `src/Simulacion.cpp`, `src/Reporte.cpp` |
-| **Isaac (4)** | A04, B04, C04 | UML, integración del registro de consumo, pruebas y evidencias | `docs/02-tecnico/uml/`, `src/Negocio.cpp`, `include/Negocio.h`, `docs/03-pruebas/` |
+| Responsable | Tarea | Antes de terminarla |
+|---|---|---|
+| Daniela | [A01 · Constantes](https://github.com/isaactorrenegra-coder/wattcontrol-panaderia-equipo4/issues/4) | Puede empezar. |
+| Daniela | [A02 · Clase Carga](https://github.com/isaactorrenegra-coder/wattcontrol-panaderia-equipo4/issues/5) | A01. |
+| Daniela | [A03 · Cargas crítica y aplazable](https://github.com/isaactorrenegra-coder/wattcontrol-panaderia-equipo4/issues/6) | A01 y A02. |
+| Gisell | [B01 · Precios y embalses](https://github.com/isaactorrenegra-coder/wattcontrol-panaderia-equipo4/issues/8) | Puede empezar con las constantes existentes. Coordinar cambios con A01. |
+| Isaac | [B02 · Medidor](https://github.com/isaactorrenegra-coder/wattcontrol-panaderia-equipo4/issues/9) | Puede empezar. |
+| Isaac | [B03 · Decisiones y límite de potencia](https://github.com/isaactorrenegra-coder/wattcontrol-panaderia-equipo4/issues/10) | A02 y A03. |
+| Néstor | [C01 · Menú y validación](https://github.com/isaactorrenegra-coder/wattcontrol-panaderia-equipo4/issues/12) | Puede empezar por la opción 1. B03 permite verificar la opción 2. |
+| Néstor | [C02 · Simulación](https://github.com/isaactorrenegra-coder/wattcontrol-panaderia-equipo4/issues/13) | A03, B01 y B04. |
+| Néstor | [C03 · Resumen](https://github.com/isaactorrenegra-coder/wattcontrol-panaderia-equipo4/issues/14) | C02. |
+| Isaac | [A04 · UML](https://github.com/isaactorrenegra-coder/wattcontrol-panaderia-equipo4/issues/7) | Revisar con el equipo desde el inicio. Validar con A03 y B03 integradas antes de exportar. |
+| Isaac | [B04 · Registrar consumo](https://github.com/isaactorrenegra-coder/wattcontrol-panaderia-equipo4/issues/11) | B02 y B03. |
+| Isaac | [C04 · Pruebas y evidencias](https://github.com/isaactorrenegra-coder/wattcontrol-panaderia-equipo4/issues/15) | A04, B04, C01, C02 y C03. |
 
-## Dependencias y coordinación
+En `src/Negocio.cpp`, Isaac se encarga de `agregarCarga()`, `evaluarCargas()` (B03) y `registrarConsumoHora()` (B04). Néstor se encarga de `simularDia()` (C02) y `mostrarResumen()` (C03). Coordinen los cambios al encabezado `include/Negocio.h`.
 
-- **A04 (Isaac):** finalizar después de A03 y B03; el UML debe coincidir con el código real.
-- **B04 (Isaac):** requiere B02 y B03. Coordinar con Gisell los cambios en `Negocio.h/.cpp`; Nestor debe acordar la interfaz que usará la simulación.
-- **C04 (Isaac):** requiere A04, B04, C02 y C03. Preparar antes la plantilla de pruebas, pero registrar resultados solo después de ejecutar el programa.
-- **Archivos compartidos:** `Negocio.h` y `Negocio.cpp` no deben modificarse simultáneamente sin coordinación. Acordar primero firmas, responsabilidades y método de integración.
+B04 se integra después de B02 y B03. Antes de C02, Néstor confirma con Gisell cómo consultar precios y embalses (B01), y con Isaac cómo evaluar las cargas y registrar su consumo (B03 y B04).
 
-## Reglas de colaboración
-
-1. Una rama por tarea, por ejemplo `feat/a02-carga-abstracta`.
-2. Commits pequeños que describan cambios reales y propios.
-3. Abrir Pull Request hacia `main` y pedir revisión a otro integrante.
-4. Corregir observaciones en la misma rama; integrar solo tras revisión y compilación.
-5. Cada persona debe poder explicar su contribución. No crear commits vacíos o atribuir trabajo ajeno.
-
-## Decisiones del caso que el equipo debe respetar
-
-- Potencia máxima contratada: **9 kW**. Las tres cargas suman 10,4 kW; al superar el límite se apaga la carga aplazable de mayor potencia (horno, 7 kW).
-- Falla de lectura: probabilidad 1/20 por hora; mantener la nevera y registrar su consumo.
-- Emergencia: precio >1500 COP/kWh y embalses <40 %; detener el ciclo con `break`.
-- Si el ciclo termina antes de 24 horas, reportar las horas reales y comparar costos sobre periodos equivalentes.
-- Las horas mínimas propuestas (horno 6 h y amasadora 4 h) deben justificarse y no presentarse como datos oficiales si no lo son.
-
-> La consigna original indica máximo 3 integrantes. Confirmar autorización docente para trabajar como equipo de cuatro antes de la entrega.
+Para crear tu rama, subir cambios y abrir el Pull Request, sigue el [flujo del README](../../README.md).

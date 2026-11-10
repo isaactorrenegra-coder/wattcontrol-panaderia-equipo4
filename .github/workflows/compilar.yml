@@ -7,5 +7,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Compilar estructura
-        run: g++ -std=c++17 -Wall -Wextra -pedantic -Iinclude wattcontrol.cpp src/*.cpp -o wattcontrol
+      - name: Compilar
+        run: bash scripts/compilar.sh
+      - name: Comprobar salida del menú
+        run: |
+          printf '0\n' | timeout 5s ./wattcontrol
+          timeout 5s ./wattcontrol < /dev/null

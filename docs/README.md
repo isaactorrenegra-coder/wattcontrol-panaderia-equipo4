@@ -7,7 +7,7 @@ Consulta solo el documento que necesitas:
 | Saber quién hace cada tarea | [Equipo y responsables](01-equipo/EQUIPO.md) |
 | Entender el reparto y las dependencias | [Reparto de trabajo](01-equipo/REPARTO.md) |
 | Consultar reglas y criterios del modelo | [Decisiones técnicas](02-tecnico/DECISIONES.md) |
-| Ver o editar el UML | [Carpeta UML](02-tecnico/uml/) |
+| Ver el UML | [Diagrama en PNG](02-tecnico/uml/diagrama-wattcontrol.png) |
 | Registrar pruebas reales | [Pruebas](03-pruebas/PRUEBAS.md) |
 | Preparar la entrega | [Lista de entrega](04-entrega/GUIA_ENTREGA.md) |
 
