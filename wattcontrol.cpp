@@ -18,7 +18,6 @@ using namespace std;
 // ==========================================
 const double POTENCIA_MAXIMA_CONTRATADA = 12000.0; // Watts (12 kW)
 const double TARIFA_BASE_KWH = 0.15;               // Precio base por kWh en USD
-const int HORAS_DIA = 24;                          // Ciclo de simulación
 
 // ==========================================
 // TAREA A02: Estructuras de datos (Cargas)
