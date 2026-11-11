@@ -4,6 +4,7 @@
 #include <limits>
 #include <cstdlib>
 #include "configuracion.h"
+#include "Carga.h"
 #include "CargaCritica.h"
 #include "CargaAplazable.h"
 #include "Negocio.h"
@@ -19,34 +20,23 @@ using namespace std;
 const double POTENCIA_MAXIMA_CONTRATADA = 12000.0; // Watts (12 kW)
 const double TARIFA_BASE_KWH = 0.15;               // Precio base por kWh en USD
 
-// ==========================================
-// TAREA A02: Estructuras de datos (Cargas)
-// ==========================================
-struct Carga {
-    string id_equipo;
-    string nombre;
-    double potencia_watts;
-    bool estado_encendido;
-    int prioridad; // 1 = Crítica (Refrigerador), 2 = Alta (Horno), 3 = Baja (Luces)
-};
 
 // ==========================================
 // TAREA A03: Inicialización de cargas
 // ==========================================
 // Función que devuelve la lista de equipos de la panadería listos para usar
-vector<Carga> inicializarCargasPanaderia() {
-    vector<Carga> inventario;
+//vector<Carga> inicializarCargasPanaderia() {
+    //vector<Carga> inventario;
     
     // { "ID", "Nombre", Potencia(W), Encendido Inicial, Prioridad }
-    inventario.push_back({"H01", "Horno Principal", 5000.0, false, 2});
-    inventario.push_back({"H02", "Horno Secundario", 3500.0, false, 2});
-    inventario.push_back({"R01", "Cámara de Refrigeración", 1200.0, true, 1});
-    inventario.push_back({"B01", "Batidora Industrial 1", 800.0, false, 3});
-    inventario.push_back({"B02", "Amasadora", 1100.0, false, 3});
-    inventario.push_back({"L01", "Iluminación General", 600.0, false, 3});
-    
-    return inventario;
-}
+    //inventario.push_back(Carga("H01", "Horno Principal", 5000.0, false, 2));
+    //inventario.push_back(Carga("H02", "Horno Secundario", 3500.0, false, 2));
+    //inventario.push_back(Carga("R01", "Cámara de Refrigeración", 1200.0, true, 1));
+    //inventario.push_back(Carga("B01", "Batidora Industrial 1", 800.0, false, 3));
+    //inventario.push_back(Carga("B02", "Amasadora", 1100.0, false, 3));
+    //inventario.push_back(Carga("L01", "Iluminación General", 600.0, false, 3));
+    //return inventario;
+//}
 
 int main() {
     std::srand(SEMILLA_SIMULACION);
