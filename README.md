@@ -8,58 +8,169 @@ La EA2 pide el programa **WattControl**, el archivo principal `wattcontrol.cpp` 
 |---|---|
 | Daniela | A01–A03 · Constantes y cargas |
 | Gisell | B01 · Precios y embalses |
-| Néstor | C01–C03 · Menú, simulación y resumen |
-| Isaac | A04, B02–B04, C04 · UML, medidor, control de potencia, consumo y pruebas |
+| Néstor | B02, C01–C03 · Medidor, menú, simulación y resumen |
+| Isaac | A04, B03–B04, C04 · UML final, control de potencia, consumo y pruebas |
 
 ## Orden de trabajo
 
-El UML queda pendiente de validación con el código integrado. Daniela puede empezar por A01, Gisell por B01, Néstor por C01 e Isaac por A04 y B02.
+Daniela puede empezar por A01, Gisell por B01, Néstor por B02 o C01 e Isaac por B03 cuando estén listas las cargas. El UML se elaborará al final, después de integrar y revisar el código.
 
 ```mermaid
 flowchart TD
     Inicio([Inicio]) --> A["Daniela · A01 → A02 → A03<br/>Constantes y cargas"]
     Inicio --> B1["Gisell · B01<br/>Precios y embalses"]
-    Inicio --> B2["Isaac · B02<br/>Medidor"]
+    Inicio --> B2["Néstor · B02<br/>Medidor"]
     Inicio --> C1["Néstor · C01<br/>Menú y validación"]
-    Inicio --> A4["Isaac · A04<br/>UML desde el inicio"]
     A --> B3["Isaac · B03<br/>Decisiones y potencia"]
     B3 --> B4["Isaac · B04<br/>Registro de consumo"]
     B2 --> B4
     B1 --> C23["Néstor · C02 → C03<br/>Simulación y resumen"]
     B4 --> C23
-    C1 --> C4["Isaac · C04<br/>Pruebas y evidencias"]
-    A4 --> C4
-    C23 --> C4
+    C1 --> C23
+    A --> A4["Isaac · A04<br/>UML final"]
+    B3 --> A4
+    C23 --> A4
+    A4 --> C4["Isaac · C04<br/>Pruebas y evidencias"]
     C4 --> Fin([Revisión final y entrega individual])
 ```
 
-Néstor puede programar la opción 1 del menú desde el inicio y verificar la opción 2 cuando Isaac integre B03. Para la simulación, Néstor necesita los precios y embalses de Gisell (B01) y el registro de consumo de Isaac (B04). Antes de preparar el PDF, Isaac comprueba que el UML coincida con el código integrado y exporta esa versión. Consulta el [reparto](docs/01-equipo/REPARTO.md) para abrir cada tarea.
+Néstor puede implementar el medidor y la opción 1 del menú desde el inicio. Para la simulación necesita los precios y embalses de Gisell (B01) y el registro de consumo de Isaac (B04). Al finalizar la integración, Isaac crea el UML a partir del código real y prepara las evidencias. Consulta el [reparto](docs/01-equipo/REPARTO.md) para abrir cada tarea.
 
-## Trabajar en una tarea
+## Tutorial obligatorio de Git por tarea
 
-1. Abre tu issue en el [reparto](docs/01-equipo/REPARTO.md) y revisa qué necesitas antes de empezar.
-2. Trae los cambios de GitHub y crea tu rama desde `origin/main`. El ejemplo es para la tarea A01.
+> **Regla de oro:** una tarea se trabaja en una rama propia. Nunca hagas commits ni ejecutes `git push origin main` desde `main`.
 
-   ```bash
-   git fetch origin
-   git switch -c tarea/a01-constantes origin/main
-   ```
+### 1. Configura y comprueba tu identidad
 
-3. Resuelve la tarea, compila y registra los cambios con tu cuenta. La EA2 pide **al menos tres commits propios por integrante** en el historial de entrega.
+Hazlo una vez por computador y compruébalo antes de cada primer commit. Sustituye los datos de ejemplo por los de tu cuenta de GitHub.
 
-   ```bash
-   git status
-   git add include/configuracion.h docs/02-tecnico/DECISIONES.md
-   git commit -m "Revisar constantes de la panadería"
-   ```
+**Bash (Git Bash, MSYS2, Linux o macOS)**
 
-   Cambia los archivos y el mensaje según tu tarea.
+```bash
+git config user.name "Tu nombre"
+git config user.email "tu-correo-de-github@ejemplo.com"
+git config --get user.name
+git config --get user.email
+```
 
-4. Sube tu rama con `git push -u origin HEAD` y abre un Pull Request hacia `main`. Escribe `Closes #4` en la descripción si tu PR completa la issue #4. Cuando aprueben el PR, intégrenlo conservando los commits. Para la siguiente tarea, repite el paso 2.
+**CMD de Windows**
+
+```bat
+git config user.name "Tu nombre"
+git config user.email "tu-correo-de-github@ejemplo.com"
+git config --get user.name
+git config --get user.email
+```
+
+### 2. Actualiza `main` y crea la rama de tu tarea
+
+Estos comandos se usan **siempre antes de comenzar una tarea nueva**. El ejemplo usa A01; cambia el nombre por el de tu tarea.
+
+**Bash**
+
+```bash
+git switch main
+git fetch origin
+git pull --ff-only origin main
+git switch -c tarea/a01-constantes
+git branch --show-current
+git status
+```
+
+**CMD**
+
+```bat
+git switch main
+git fetch origin
+git pull --ff-only origin main
+git switch -c tarea/a01-constantes
+git branch --show-current
+git status
+```
+
+Usa una rama distinta para cada issue:
+
+| Tarea | Responsable | Rama sugerida |
+|---|---|---|
+| A01 | Daniela | `tarea/a01-constantes` |
+| A02 | Daniela | `tarea/a02-carga` |
+| A03 | Daniela | `tarea/a03-tipos-carga` |
+| B01 | Gisell | `tarea/b01-mercado` |
+| B02 | Néstor | `tarea/b02-medidor` |
+| B03 | Isaac | `tarea/b03-decisiones` |
+| B04 | Isaac | `tarea/b04-consumo` |
+| C01 | Néstor | `tarea/c01-menu` |
+| C02 | Néstor | `tarea/c02-simulacion` |
+| C03 | Néstor | `tarea/c03-resumen` |
+| A04 | Isaac, al final | `tarea/a04-uml-final` |
+| C04 | Isaac | `tarea/c04-pruebas` |
+
+### 3. Revisa, compila y guarda un avance
+
+Antes de cada commit ejecuta `git status`, revisa `git diff`, compila y agrega únicamente los archivos de tu tarea. No uses `git add .` sin revisar qué incluye.
+
+**Bash**
+
+```bash
+git status
+git diff
+bash scripts/compilar.sh
+./wattcontrol
+git add ruta/del/archivo1 ruta/del/archivo2
+git diff --staged
+git commit -m "A01: describir el cambio realizado"
+```
+
+**CMD**
+
+```bat
+git status
+git diff
+g++ -std=c++17 -Wall -Wextra -pedantic -Iinclude wattcontrol.cpp src\Carga.cpp src\CargaAplazable.cpp src\CargaCritica.cpp src\Medidor.cpp src\Mercado.cpp src\Negocio.cpp src\Reporte.cpp -o wattcontrol.exe
+wattcontrol.exe
+git add ruta\del\archivo1 ruta\del\archivo2
+git diff --staged
+git commit -m "A01: describir el cambio realizado"
+```
+
+La EA2 pide **al menos tres commits propios por integrante**. Cada commit debe representar un avance real y tener un mensaje claro; no crees commits vacíos para completar el número.
+
+### 4. Sube tu rama y abre el Pull Request
+
+La primera vez que subas la rama usa:
+
+```text
+git status
+git push -u origin HEAD
+```
+
+El comando es igual en Bash y CMD. Abre el enlace que muestra GitHub, crea el Pull Request hacia `main` y escribe `Closes #N` en la descripción, sustituyendo `N` por el número de tu issue.
+
+Si `main` cambió antes de integrar tu Pull Request, actualiza tu rama:
+
+```text
+git fetch origin
+git rebase origin/main
+git push --force-with-lease
+```
+
+Usa `--force-with-lease` solamente en tu propia rama después del `rebase`; nunca sobre `main` ni sobre la rama de otra persona. Si aparecen conflictos, no continúes a ciegas: coordina con quien modificó el mismo archivo.
+
+### 5. Después de integrar el Pull Request
+
+```text
+git switch main
+git pull --ff-only origin main
+git branch -d tarea/a01-constantes
+```
+
+Cambia el último nombre por tu rama. Para la siguiente tarea, vuelve al paso 2 y crea una rama nueva.
 
 ## Compilar y ejecutar
 
-Si aún no tienes el repositorio, abre una terminal con Git y g++ disponibles. En Windows, usa la terminal Bash de MSYS2 desde VS Code.
+Si aún no tienes el repositorio, abre una terminal con Git y g++ disponibles.
+
+**Bash**
 
 ```bash
 git clone https://github.com/isaactorrenegra-coder/wattcontrol-panaderia-equipo4.git
@@ -67,6 +178,15 @@ cd wattcontrol-panaderia-equipo4
 bash scripts/compilar.sh
 ```
 
-Ejecuta `./wattcontrol.exe` en Windows o `./wattcontrol` en Linux. Para comprobar tu correo de autor, usa `git config user.email` y verifica que corresponda a tu cuenta de GitHub.
+**CMD**
+
+```bat
+git clone https://github.com/isaactorrenegra-coder/wattcontrol-panaderia-equipo4.git
+cd wattcontrol-panaderia-equipo4
+g++ -std=c++17 -Wall -Wextra -pedantic -Iinclude wattcontrol.cpp src\Carga.cpp src\CargaAplazable.cpp src\CargaCritica.cpp src\Medidor.cpp src\Mercado.cpp src\Negocio.cpp src\Reporte.cpp -o wattcontrol.exe
+wattcontrol.exe
+```
+
+En Bash ejecuta `./wattcontrol`; en CMD ejecuta `wattcontrol.exe`.
 
 [Reglas de la panadería](docs/02-tecnico/DECISIONES.md) · [Pruebas](docs/03-pruebas/PRUEBAS.md) · [Entrega individual](docs/04-entrega/GUIA_ENTREGA.md)

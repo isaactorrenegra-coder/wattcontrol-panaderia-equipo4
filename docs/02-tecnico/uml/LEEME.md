@@ -1,7 +1,7 @@
 # Diagrama UML
 
-Abrir [diagrama-wattcontrol.drawio](diagrama-wattcontrol.drawio) con diagrams.net (draw.io) al iniciar el trabajo. El archivo está listo para acordar las responsabilidades de las seis clases y las firmas de sus métodos. Si el equipo cambia esas firmas durante la implementación, actualizar el diagrama.
+El UML definitivo todavía no está creado. La tarea A04 se realizará al final, cuando las clases y sus firmas ya estén integradas y verificadas.
 
-El diagrama muestra la herencia de las cargas, la agregación de cargas en `Negocio`, la composición con `Medidor` y la asociación con `Mercado`. El método virtual puro `debeEncender()` y sus implementaciones con `override` representan el polimorfismo.
+En A04 se debe crear el archivo editable en diagrams.net (draw.io), representar las relaciones que existan realmente en el código y exportar la versión validada a PNG o PDF para el informe.
 
-Antes de preparar el PDF, comparar clases, firmas, visibilidad y multiplicidades con el código integrado. Exportar la versión validada a PNG o PDF para el informe.
+Antes de exportar, comparar clases, atributos, métodos, firmas, visibilidad y multiplicidades con el código integrado. No reutilizar un diseño anterior sin comprobarlo.
