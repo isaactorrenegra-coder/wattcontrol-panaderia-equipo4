@@ -84,7 +84,7 @@
 - Produces: `main` remoto limpio y issue #9 asignado a `stify362`
 
 - [ ] **Step 1:** Ejecutar la compilación completa y comprobar el ejecutable generado.
-- [ ] **Step 2:** Verificar con `git rev-list --objects --all` que los artefactos eliminados no estén en el historial publicable.
+- [ ] **Step 2:** Verificar con `git rev-list --objects main` que los artefactos eliminados no estén en el historial publicable; las referencias locales de respaldo se excluyen deliberadamente de esta comprobación.
 - [ ] **Step 3:** Confirmar que el remoto todavía apunta al SHA registrado en Task 1.
 - [ ] **Step 4:** Publicar con `git push --force-with-lease`.
 - [ ] **Step 5:** Reasignar el issue #9 a `stify362` y verificar su estado.

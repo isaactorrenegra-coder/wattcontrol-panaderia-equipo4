@@ -40,6 +40,32 @@ Néstor puede implementar el medidor y la opción 1 del menú desde el inicio. P
 
 > **Regla de oro:** una tarea se trabaja en una rama propia. Nunca hagas commits ni ejecutes `git push origin main` desde `main`.
 
+### Antes de seguir: si clonaste el repositorio antes de esta limpieza
+
+El historial de `main` fue reorganizado el **11 de noviembre de 2026**. Un clon anterior no se puede actualizar con un `git pull` normal. Conserva la carpeta antigua como respaldo y vuelve a clonar:
+
+**Bash**
+
+```bash
+git status
+cd ..
+mv wattcontrol-panaderia-equipo4 wattcontrol-panaderia-equipo4-anterior
+git clone https://github.com/isaactorrenegra-coder/wattcontrol-panaderia-equipo4.git
+cd wattcontrol-panaderia-equipo4
+```
+
+**CMD**
+
+```bat
+git status
+cd ..
+ren wattcontrol-panaderia-equipo4 wattcontrol-panaderia-equipo4-anterior
+git clone https://github.com/isaactorrenegra-coder/wattcontrol-panaderia-equipo4.git
+cd wattcontrol-panaderia-equipo4
+```
+
+Si el primer `git status` muestra cambios o commits que aún no están en GitHub, **no borres la carpeta anterior**. Conserva ese respaldo y traslada solamente los archivos de tu tarea al clon nuevo después de coordinar con el equipo; nunca copies la carpeta `.git`. Si cualquier comando falla, detente y corrige el error antes de ejecutar el siguiente.
+
 ### 1. Configura y comprueba tu identidad
 
 Hazlo una vez por computador y compruébalo antes de cada primer commit. Sustituye los datos de ejemplo por los de tu cuenta de GitHub.
@@ -69,24 +95,21 @@ Estos comandos se usan **siempre antes de comenzar una tarea nueva**. El ejemplo
 **Bash**
 
 ```bash
-git switch main
-git fetch origin
-git pull --ff-only origin main
-git switch -c tarea/a01-constantes
-git branch --show-current
+git switch main &&
+git fetch origin &&
+git pull --ff-only origin main &&
+git switch -c tarea/a01-constantes &&
+git branch --show-current &&
 git status
 ```
 
 **CMD**
 
 ```bat
-git switch main
-git fetch origin
-git pull --ff-only origin main
-git switch -c tarea/a01-constantes
-git branch --show-current
-git status
+git switch main && git fetch origin && git pull --ff-only origin main && git switch -c tarea/a01-constantes && git branch --show-current && git status
 ```
+
+Los operadores `&&` garantizan que la rama se cree solamente si `main` se actualizó correctamente. Si la cadena se detiene, no crees la rama hasta resolver el error.
 
 Usa una rama distinta para cada issue:
 
