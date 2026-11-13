@@ -27,3 +27,7 @@ El nivel inicial de embalses del 60 % es un valor de demostración de la plantil
 Registrar solo cargas encendidas. Una carga de potencia P kW activa durante una hora consume P kWh. En la falla simulada, usar el precio generado para contabilizar ambos escenarios y mantener solo la nevera encendida. Si hay emergencia, detenerse antes de contabilizar esa hora en cualquiera de los escenarios. Mostrar las horas procesadas y comparar ambos costos sobre ese mismo periodo.
 
 No cambiar los umbrales ni inventar resultados de simulación sin justificarlo en el informe.
+
+## Diseño de clases (A02 · Carga)
+
+- **Encapsulamiento (`protected` vs `private`):** Los atributos de `Carga` (`nombre_`, `potenciaKW_`, `encendida_`, `horasUso_`, `energiaKWh_`) se declaran como `protected` para que las clases derivadas (`CargaCritica` y `CargaAplazable`) puedan acceder a ellos directamente por herencia, manteniendo restringido el acceso desde el exterior de la jerarquía (a diferencia de `private`, que impediría incluso a las clases hijas leer o modificar esos atributos sin pasar por métodos públicos).
