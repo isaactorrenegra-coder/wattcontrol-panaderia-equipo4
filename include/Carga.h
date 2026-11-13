@@ -13,7 +13,7 @@ protected:
 public:
     Carga(const std::string& nombre, double potenciaKW);
     virtual ~Carga() = default;
-    virtual bool debeEncender(int hora, double precioCOPkWh, double embalsesPct) const = 0;
+    virtual bool debeEncender(int hora, double precioCOPkWh, double embalsesPct) const = 0; // A02: regla de encendido/apagado de la carga de la asbtracta.
     virtual bool esAplazable() const = 0;
     void fijarEncendida(bool encendida);
     void registrarHora();
