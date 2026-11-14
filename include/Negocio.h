@@ -27,3 +27,6 @@ public:
     void simularDia();                     // C02
     void mostrarResumen() const;           // C03
 };
+// Acceso acordado para consultar el costo base y el ahorro en B04, ya nestor hizo su parte en C02.
+    double costoSinGestorCOP() const { return costoSinGestorCOP_; }
+    double ahorroCOP() const { return costoSinGestorCOP_ - medidor_.costoTotalCOP(); }
