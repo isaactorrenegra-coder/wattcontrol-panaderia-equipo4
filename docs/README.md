@@ -10,5 +10,6 @@ Consulta solo el documento que necesitas:
 | Preparar el UML final | [Instrucciones de A04](02-tecnico/uml/LEEME.md) |
 | Registrar pruebas reales | [Pruebas](03-pruebas/PRUEBAS.md) |
 | Preparar la entrega | [Lista de entrega](04-entrega/GUIA_ENTREGA.md) |
+| Consultar el cierre técnico | [Acción final](04-entrega/ACCION_FINAL.md) |
 
 **Para empezar:** lee el README. Después consulta tu Issue asignada. No necesitas leer todos estos documentos para comenzar a programar.
