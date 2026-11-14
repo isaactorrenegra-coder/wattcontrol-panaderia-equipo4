@@ -20,21 +20,68 @@ bool Negocio::agregarCarga(Carga* carga) {
     return false;     // Retorna falso si el arreglo está lleno o la carga es nula
 }
 
-// Método para evaluar las cargas según la hora, precio y embalses
+// Método para evaluar las cargas según la hora, precio y embalses.
 void Negocio::evaluarCargas(int hora, double precio, double embalses) {
+    const bool riesgoEmbalses = embalses < config::EMBALSE_ALERTA_PCT;
+
+    if (riesgoEmbalses) {
+        std::cout << "[ALERTA] Riesgo: embalses por debajo de "
+                  << config::EMBALSE_ALERTA_PCT
+                  << "%. Solo se mantendran las cargas no aplazables.\n";
+    }
+
+    // Esta es la unica consulta de decision: cada carga responde de forma
+    // polimorfica y Negocio aplica despues las reglas generales del negocio.
     for (int i = 0; i < numeroCargas_; ++i) {
         if (cargas_[i] != nullptr) {
-            // 1. Preguntamos a la carga si debe encenderse según la hora, el precio y los embalses
             bool encender = cargas_[i]->debeEncender(hora, precio, embalses);
-            
-            // 2. Aplicamos ese estado real en la carga
+            if (riesgoEmbalses && cargas_[i]->esAplazable()) {
+                encender = false;
+            }
             cargas_[i]->fijarEncendida(encender);
+        }
+    }
+
+    double potenciaTotalKW = 0.0;
+    for (int i = 0; i < numeroCargas_; ++i) {
+        if (cargas_[i] != nullptr && cargas_[i]->encendida()) {
+            potenciaTotalKW += cargas_[i]->potenciaKW();
+        }
+    }
+
+    if (potenciaTotalKW > config::POTENCIA_CONTRATADA_KW) {
+        int indiceMayor = -1;
+        double mayorPotenciaKW = 0.0;
+
+        for (int i = 0; i < numeroCargas_; ++i) {
+            if (cargas_[i] != nullptr && cargas_[i]->encendida()
+                && cargas_[i]->potenciaKW() > mayorPotenciaKW) {
+                indiceMayor = i;
+                mayorPotenciaKW = cargas_[i]->potenciaKW();
+            }
+        }
+
+        if (indiceMayor >= 0) {
+            std::cout << "[ALERTA] Potencia solicitada: " << potenciaTotalKW
+                      << " kW. Supera los "
+                      << config::POTENCIA_CONTRATADA_KW
+                      << " kW contratados.\n";
+            cargas_[indiceMayor]->fijarEncendida(false);
+            potenciaTotalKW -= mayorPotenciaKW;
+            std::cout << "[CONTROL] Se apaga " << cargas_[indiceMayor]->nombre()
+                      << " (" << mayorPotenciaKW << " kW). Potencia restante: "
+                      << potenciaTotalKW << " kW.\n";
         }
     }
 }
 
 // Método principal que ejecuta la simulación de las 24 horas del día
 void Negocio::simularDia() {
+    if (mercado_ == nullptr) {
+        std::cout << "[ERROR] No se puede simular: el mercado no esta disponible.\n";
+        return;
+    }
+
     // 1. Inicializamos el contador de horas simuladas a 24
     horasSimuladas_ = 24;
     tieneSimulacion_ = true;
@@ -72,10 +119,12 @@ void Negocio::registrarConsumoHora(double precioCOPKWh) {
         // Verificamos que la carga exista y que se encuentre encendida en esta hora
         if (cargas_[i] != nullptr && cargas_[i]->encendida()) {
             potenciaTotalHoraKWh += cargas_[i]->potenciaKW();
+            cargas_[i]->registrarHora();
         }
     }
 
-    // Enviamos la potencia total y el precio actual al medidor para que actualice kWh y costos
+    // Enviamos la potencia total y el precio actual al medidor para que
+    // actualice energia y costo.
     medidor_.registrarHora(potenciaTotalHoraKWh, precioCOPKWh);
 }
 

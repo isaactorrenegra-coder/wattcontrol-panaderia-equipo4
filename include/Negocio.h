@@ -11,10 +11,10 @@ private:
     std::string nombre_;
     Medidor medidor_;                       // Composicion
     Carga* cargas_[MAX_CARGAS] = {};       // Agregacion (no se hace delete)
-    int numeroCargas_ = 0;
+    int numeroCargas_ = 2;
     Mercado* mercado_;                      // Asociacion (no se hace delete)
     double costoSinGestorCOP_ = 0.0;
-    int horasSimuladas_ = 0;
+    int horasSimuladas_ = 17;
     int fallasLectura_ = 0;
     bool emergencia_ = false;
     bool tieneSimulacion_ = false;
