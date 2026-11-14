@@ -1,5 +1,6 @@
 #include "Negocio.h"
 #include "Reporte.h"
+#include <iomanip>
 #include <iostream>
 
 // Constructor de la clase Negocio (inicializa nombre, mercado y valores por defecto)
@@ -75,6 +76,14 @@ void Negocio::evaluarCargas(int hora, double precio, double embalses) {
                       << potenciaTotalKW << " kW.\n";
         }
     }
+
+    for (int i = 0; i < numeroCargas_; ++i) {
+        if (cargas_[i] != nullptr) {
+            std::cout << "[DECISION] " << cargas_[i]->nombre() << ": "
+                      << (cargas_[i]->encendida() ? "encendida" : "aplazada")
+                      << ".\n";
+        }
+    }
 }
 
 // Método principal que ejecuta la simulación de las 24 horas del día
@@ -84,31 +93,68 @@ void Negocio::simularDia() {
         return;
     }
 
-    // 1. Inicializamos el contador de horas simuladas a 24
-    horasSimuladas_ = 24;
+    horasSimuladas_ = 0;
+    fallasLectura_ = 0;
+    emergencia_ = false;
+    costoSinGestorCOP_ = 0.0;
     tieneSimulacion_ = true;
-    
-    // 2. Limpiamos cualquier acumulador previo en el medidor antes de empezar el día
     medidor_.reiniciar();
+    for (int i = 0; i < numeroCargas_; ++i) {
+        if (cargas_[i] != nullptr) {
+            cargas_[i]->reiniciar();
+        }
+    }
 
-    std::cout << "\n[SIMULACION] Iniciando ciclo de 24 horas para: " << nombre_ << "..." << std::endl;
+    std::cout << "\n[SIMULACION] Iniciando ciclo de 24 horas para: " << nombre_ << "...\n";
 
-    // 3. Bucle que recorre cada hora del día (desde la hora 0 hasta la hora 23)
-    for (int hora = 0; hora < 24; ++hora) {
-        // A. Consultamos al Mercado el precio de la energía y el nivel de los embalses en esta hora específica
+    for (int hora = 0; hora < HORAS_DIA; ++hora) {
         double precioActual = mercado_->precioHora(hora);
         double embalsesActual = mercado_->nivelEmbalses();
 
-        // B. Evaluamos el estado de las cargas según las reglas de negocio, el costo de la hora y el agua
-        evaluarCargas(hora, precioActual, embalsesActual);
+        if (precioActual > config::PRECIO_EMERGENCIA_COP_KWH
+            && embalsesActual < config::EMBALSE_ALERTA_PCT) {
+            emergencia_ = true;
+            std::cout << "[EMERGENCIA] Precio de " << precioActual
+                      << " COP/kWh con embalses en " << embalsesActual
+                      << "%. La simulacion se detiene antes de contabilizar esta hora.\n";
+            break;
+        }
 
-        // C. Registramos el consumo energético de esta hora exacta en el medidor
+        const bool fallaLectura = (std::rand() % config::FALLA_LECTURA_CADA) == 0;
+        if (fallaLectura) {
+            ++fallasLectura_;
+            std::cout << "[FALLA] Lectura no disponible en la hora " << hora
+                      << ". Se mantiene solo la carga critica.\n";
+        }
+
+        evaluarCargas(hora, precioActual, embalsesActual);
+        if (fallaLectura) {
+            for (int i = 0; i < numeroCargas_; ++i) {
+                if (cargas_[i] != nullptr && cargas_[i]->esAplazable()) {
+                    cargas_[i]->fijarEncendida(false);
+                }
+            }
+        }
+
+        double potenciaSinGestorKW = 0.0;
+        for (int i = 0; i < numeroCargas_; ++i) {
+            if (cargas_[i] != nullptr && (!fallaLectura || !cargas_[i]->esAplazable())) {
+                potenciaSinGestorKW += cargas_[i]->potenciaKW();
+            }
+        }
+        costoSinGestorCOP_ += potenciaSinGestorKW * precioActual;
         registrarConsumoHora(precioActual);
+        ++horasSimuladas_;
     }
 
-    std::cout << "[SIMULACION] ¡Simulacion de 24 horas completada con exito!" << std::endl;
+    std::cout << "[SIMULACION] Horas procesadas: " << horasSimuladas_ << " de "
+              << HORAS_DIA << ".\n";
+    if (emergencia_) {
+        std::cout << "[SIMULACION] Finalizada anticipadamente por emergencia.\n";
+    } else {
+        std::cout << "[SIMULACION] Simulacion de 24 horas completada con exito.\n";
+    }
 
-    // 4. Al finalizar las 24 horas, invocamos el reporte de consumo con los totales del medidor
     generarReporteConsumo(medidor_.energiaTotalKWh(), medidor_.costoTotalCOP());
 }
 
@@ -136,13 +182,43 @@ void Negocio::mostrarResumen() const {
     std::cout << "   C03: RESUMEN DE CONSUMO Y AHORRO     \n";
     std::cout << "========================================\n";
     
-    double totalKWh = medidor_.energiaTotalKWh();
-    double costoCOP = medidor_.costoTotalCOP();
+    if (!tieneSimulacion_) {
+        std::cout << "No hay una simulacion disponible. Ejecute primero la opcion 3.\n";
+        return;
+    }
+
+    const double totalKWh = medidor_.energiaTotalKWh();
+    const double costoCOP = medidor_.costoTotalCOP();
     generarReporteConsumo(totalKWh, costoCOP);
 
-    std::cout << " Negocio: Panaderia\n";
-    std::cout << " Energia total consumida : " << totalKWh << " kWh\n";
-    std::cout << " Costo total estimado    : $" << costoCOP << " COP\n";
-    std::cout << " Estado de optimizacion  : Completado\n";
+    std::cout << std::fixed << std::setprecision(2);
+    std::cout << " Negocio: " << nombre_ << "\n";
+    std::cout << " Horas procesadas        : " << horasSimuladas_ << "\n";
+    std::cout << " Fallas de lectura       : " << fallasLectura_ << "\n";
+    std::cout << " Costo sin gestor        : $" << costoSinGestorCOP_ << " COP\n";
+    std::cout << " Costo con gestor        : $" << costoCOP << " COP\n";
+    std::cout << " Ahorro                  : $" << ahorroCOP() << " COP\n";
+    std::cout << " Estado                  : "
+              << (emergencia_ ? "Detenida por emergencia" : "Completada") << "\n";
+    for (int i = 0; i < numeroCargas_; ++i) {
+        if (cargas_[i] != nullptr) {
+            int horasMinimas = 0;
+            if (cargas_[i]->nombre() == "Horno electrico") {
+                horasMinimas = config::HORAS_MIN_HORNO;
+            } else if (cargas_[i]->nombre() == "Amasadora") {
+                horasMinimas = config::HORAS_MIN_AMASADORA;
+            }
+            std::cout << " " << cargas_[i]->nombre() << ": "
+                      << cargas_[i]->horasUso() << " h, "
+                      << cargas_[i]->energiaKWh() << " kWh";
+            if (horasMinimas > 0) {
+                std::cout << " (minimo " << horasMinimas << " h: "
+                          << (cargas_[i]->horasUso() >= horasMinimas
+                                  ? "cumplido" : "produccion incompleta")
+                          << ")";
+            }
+            std::cout << "\n";
+        }
+    }
     std::cout << "========================================\n";
 }

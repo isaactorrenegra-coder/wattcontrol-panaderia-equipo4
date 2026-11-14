@@ -25,7 +25,7 @@ int main() {
     double precioManual = 600.0;
     double embalsesManual = mercado.nivelEmbalses();
     do {
-        std::cout << "\n===== WATTCONTROL PANADERIA (PLANTILLA EA2) =====\n"
+        std::cout << "\n===== WATTCONTROL PANADERIA =====\n"
                   << "1. Ingresar lectura manual\n"
                   << "2. Evaluar decision de cada carga\n"
                   << "3. Simular un dia completo\n"
@@ -41,9 +41,6 @@ int main() {
         }
         switch (opcion) {
         case 1: {
-            // ==========================================
-            // C01: COMPLETAR EL MENÚ Y VALIDAR LAS ENTRADAS
-            // ==========================================
             std::cout << "\n--- INGRESO DE LECTURA MANUAL ---\n";
             
             // 1. Validar Hora (0 a 23)
