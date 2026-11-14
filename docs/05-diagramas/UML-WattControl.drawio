@@ -1,0 +1,87 @@
+<mxfile host="app.diagrams.net" modified="2026-11-14T23:40:00.000Z" agent="Mozilla/5.0" version="24.7.17" type="device">
+  <diagram id="wattcontrol-uml" name="UML WattControl">
+    <mxGraphModel dx="1600" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1000" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <mxCell id="title" value="WattControl - Diagrama UML derivado del código C++" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=22;fontStyle=1;fontColor=#1f2937;" vertex="1" parent="1">
+          <mxGeometry x="40" y="25" width="700" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="subtitle" value="Clases, herencia, relaciones de ownership y puntos de entrada observados en include/, src/ y wattcontrol.cpp" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=13;fontColor=#4b5563;" vertex="1" parent="1">
+          <mxGeometry x="42" y="62" width="920" height="30" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="carga" value="&lt;b&gt;&amp;laquo;abstract&amp;raquo;&lt;/b&gt;&lt;br&gt;&lt;b&gt;Carga&lt;/b&gt;&lt;hr&gt;&lt;font color=&quot;#6b7280&quot;&gt;# nombre_: string&lt;br&gt;# potenciaKW_: double&lt;br&gt;# encendida_: bool&lt;br&gt;# horasUso_: int&lt;br&gt;# energiaKWh_: double&lt;/font&gt;&lt;hr&gt;+ Carga(nombre, potenciaKW)&lt;br&gt;+ ~Carga()&lt;br&gt;+ debeEncender(hora, precio, embalses): bool&lt;br&gt;+ esAplazable(): bool&lt;br&gt;+ fijarEncendida(encendida): void&lt;br&gt;+ registrarHora(): void&lt;br&gt;+ reiniciar(): void&lt;br&gt;+ nombre(): string&amp;amp;&lt;br&gt;+ potenciaKW(): double&lt;br&gt;+ encendida(): bool&lt;br&gt;+ horasUso(): int&lt;br&gt;+ energiaKWh(): double" style="shape=swimlane;childLayout=stackLayout;horizontal=0;rounded=0;html=1;whiteSpace=wrap;fillColor=#dbeafe;strokeColor=#2563eb;fontSize=12;swimlaneFillColor=#bfdbfe;swimlaneLine=1;" vertex="1" parent="1">
+          <mxGeometry x="70" y="170" width="330" height="305" as="geometry"/>
+        </mxCell>
+        <mxCell id="aplazable" value="&lt;b&gt;CargaAplazable&lt;/b&gt;&lt;hr&gt;+ CargaAplazable(nombre, potenciaKW)&lt;br&gt;+ debeEncender(hora, precio, embalses): bool&lt;br&gt;+ esAplazable(): bool" style="shape=swimlane;childLayout=stackLayout;horizontal=0;rounded=0;html=1;whiteSpace=wrap;fillColor=#dcfce7;strokeColor=#16a34a;fontSize=12;swimlaneFillColor=#bbf7d0;swimlaneLine=1;" vertex="1" parent="1">
+          <mxGeometry x="480" y="170" width="280" height="145" as="geometry"/>
+        </mxCell>
+        <mxCell id="critica" value="&lt;b&gt;CargaCritica&lt;/b&gt;&lt;hr&gt;+ CargaCritica(nombre, potenciaKW)&lt;br&gt;+ debeEncender(hora, precio, embalses): bool&lt;br&gt;+ esAplazable(): bool" style="shape=swimlane;childLayout=stackLayout;horizontal=0;rounded=0;html=1;whiteSpace=wrap;fillColor=#fef3c7;strokeColor=#d97706;fontSize=12;swimlaneFillColor=#fde68a;swimlaneLine=1;" vertex="1" parent="1">
+          <mxGeometry x="480" y="365" width="280" height="145" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="medidor" value="&lt;b&gt;Medidor&lt;/b&gt;&lt;hr&gt;- energiaTotalKWh_: double&lt;br&gt;- costoTotalCOP_: double&lt;hr&gt;+ reiniciar(): void&lt;br&gt;+ registrarHora(potencia, precio): void&lt;br&gt;+ energiaTotalKWh(): double&lt;br&gt;+ costoTotalCOP(): double" style="shape=swimlane;childLayout=stackLayout;horizontal=0;rounded=0;html=1;whiteSpace=wrap;fillColor=#ede9fe;strokeColor=#7c3aed;fontSize=12;swimlaneFillColor=#ddd6fe;swimlaneLine=1;" vertex="1" parent="1">
+          <mxGeometry x="875" y="170" width="300" height="190" as="geometry"/>
+        </mxCell>
+        <mxCell id="mercado" value="&lt;b&gt;Mercado&lt;/b&gt;&lt;hr&gt;- embalsesPct_: double&lt;hr&gt;+ precioHora(hora): double&lt;br&gt;+ nivelEmbalses(): double&lt;br&gt;+ actualizarNivelEmbalses(nivel): void" style="shape=swimlane;childLayout=stackLayout;horizontal=0;rounded=0;html=1;whiteSpace=wrap;fillColor=#fce7f3;strokeColor=#db2777;fontSize=12;swimlaneFillColor=#fbcfe8;swimlaneLine=1;" vertex="1" parent="1">
+          <mxGeometry x="875" y="425" width="300" height="155" as="geometry"/>
+        </mxCell>
+        <mxCell id="negocio" value="&lt;b&gt;Negocio&lt;/b&gt;&lt;hr&gt;- nombre_: string&lt;br&gt;- medidor_: Medidor&lt;br&gt;- cargas_: Carga*[MAX_CARGAS]&lt;br&gt;- numeroCargas_: int&lt;br&gt;- mercado_: Mercado*&lt;br&gt;- costoSinGestorCOP_: double&lt;br&gt;- horasSimuladas_: int&lt;br&gt;- fallasLectura_: int&lt;br&gt;- emergencia_: bool&lt;br&gt;- tieneSimulacion_: bool&lt;hr&gt;+ Negocio(nombre, mercado)&lt;br&gt;+ agregarCarga(carga): bool&lt;br&gt;+ evaluarCargas(hora, precio, embalses): void&lt;br&gt;+ registrarConsumoHora(precio): void&lt;br&gt;+ simularDia(): void&lt;br&gt;+ mostrarResumen(): void&lt;br&gt;+ costoSinGestorCOP(): double&lt;br&gt;+ ahorroCOP(): double" style="shape=swimlane;childLayout=stackLayout;horizontal=0;rounded=0;html=1;whiteSpace=wrap;fillColor=#fee2e2;strokeColor=#dc2626;fontSize=12;swimlaneFillColor=#fecaca;swimlaneLine=1;" vertex="1" parent="1">
+          <mxGeometry x="430" y="625" width="440" height="340" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="config" value="&lt;b&gt;&amp;laquo;namespace&amp;raquo;&lt;/b&gt;&lt;br&gt;&lt;b&gt;config&lt;/b&gt;&lt;hr&gt;Potencias y límites&lt;br&gt;Precios por franja&lt;br&gt;Umbrales de precio/embalses&lt;br&gt;Horas mínimas y semilla" style="shape=note;html=1;whiteSpace=wrap;fillColor=#f3f4f6;strokeColor=#6b7280;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="1240" y="180" width="230" height="145" as="geometry"/>
+        </mxCell>
+        <mxCell id="reporte" value="&lt;b&gt;&amp;laquo;function&amp;raquo;&lt;/b&gt;&lt;br&gt;&lt;b&gt;generarReporteConsumo&lt;/b&gt;&lt;br&gt;(energiaTotalKWh, costoTotalCOP): void&lt;br&gt;&lt;br&gt;Implementada en src/Reporte.cpp y usada por Negocio." style="shape=note;html=1;whiteSpace=wrap;fillColor=#f3f4f6;strokeColor=#6b7280;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="1240" y="395" width="250" height="150" as="geometry"/>
+        </mxCell>
+        <mxCell id="main" value="&lt;b&gt;&amp;laquo;executable&amp;raquo;&lt;/b&gt;&lt;br&gt;&lt;b&gt;main() - wattcontrol.cpp&lt;/b&gt;&lt;br&gt;&lt;br&gt;Crea Mercado, cargas y Negocio&lt;br&gt;Agrega las cargas&lt;br&gt;Expone el menú de consola" style="shape=note;html=1;whiteSpace=wrap;fillColor=#f3f4f6;strokeColor=#6b7280;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="40" y="625" width="260" height="150" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="inherit1" value="" style="endArrow=block;endFill=0;dashed=0;html=1;strokeWidth=1.5;" edge="1" parent="1" source="aplazable" target="carga">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="inherit2" value="" style="endArrow=block;endFill=0;dashed=0;html=1;strokeWidth=1.5;" edge="1" parent="1" source="critica" target="carga">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="compose" value="1" style="endArrow=diamond;endFill=1;html=1;strokeWidth=1.5;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="negocio" target="medidor">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"><mxPoint x="850" y="710"/></Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="aggregate" value="0..*" style="endArrow=diamond;endFill=0;html=1;strokeWidth=1.5;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="negocio" target="carga">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"><mxPoint x="390" y="790"/><mxPoint x="390" y="470"/></Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="associate" value="1" style="endArrow=open;html=1;strokeWidth=1.5;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="negocio" target="mercado">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"><mxPoint x="900" y="600"/></Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="usesConfig1" value="usa constantes" style="endArrow=open;html=1;dashed=1;strokeColor=#6b7280;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="carga" target="config">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="usesConfig2" value="usa constantes" style="endArrow=open;html=1;dashed=1;strokeColor=#6b7280;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="mercado" target="config">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="usesConfig3" value="usa constantes" style="endArrow=open;html=1;dashed=1;strokeColor=#6b7280;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="negocio" target="config">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="usesReport" value="llama" style="endArrow=open;html=1;dashed=1;strokeColor=#6b7280;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="negocio" target="reporte">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="creates" value="crea y agrega" style="endArrow=open;html=1;dashed=1;strokeColor=#6b7280;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="main" target="negocio">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="legend" value="&lt;b&gt;Leyenda&lt;/b&gt;&lt;br&gt;◆ relleno = composición (Negocio posee Medidor)&lt;br&gt;◇ vacío = agregación (Negocio no libera Carga*)&lt;br&gt;△ = herencia / realización de métodos virtuales&lt;br&gt;→ = asociación o dependencia" style="shape=note;html=1;whiteSpace=wrap;fillColor=#fffbeb;strokeColor=#d97706;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="1010" y="700" width="420" height="145" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

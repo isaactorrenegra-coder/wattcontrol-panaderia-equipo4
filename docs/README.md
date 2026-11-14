@@ -8,6 +8,7 @@ Consulta solo el documento que necesitas:
 | Entender el reparto y las dependencias | [Reparto de trabajo](01-equipo/REPARTO.md) |
 | Consultar reglas y criterios del modelo | [Decisiones técnicas](02-tecnico/DECISIONES.md) |
 | Preparar el UML final | [Instrucciones de A04](02-tecnico/uml/LEEME.md) |
+| Abrir el UML editable en draw.io | [Diagrama UML de WattControl](05-diagramas/README.md) |
 | Registrar pruebas reales | [Pruebas](03-pruebas/PRUEBAS.md) |
 | Preparar la entrega | [Lista de entrega](04-entrega/GUIA_ENTREGA.md) |
 | Consultar el cierre técnico | [Acción final](04-entrega/ACCION_FINAL.md) |
