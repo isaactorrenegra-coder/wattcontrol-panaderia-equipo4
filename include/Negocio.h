@@ -26,4 +26,6 @@ public:
     void registrarConsumoHora(double precioCOPkWh);
     void simularDia();                     // C02
     void mostrarResumen() const;           // C03
+    double costoSinGestorCOP() const { return costoSinGestorCOP_; }
+    double ahorroCOP() const { return costoSinGestorCOP_ - medidor_.costoTotalCOP(); }
 };
