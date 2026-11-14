@@ -3,10 +3,12 @@
 #include <iomanip>
 
 // Implementación de la función de reporte
+// Si es una función libre (sin clase):
 void generarReporteConsumo(double energiaTotalKWh, double costoTotalCOP) {
-    std::cout << "\n==============================================" << std::endl;
-    std::cout << "         REPORTE FINAL DE CONSUMO - WATTCONTROL " << std::endl;
-    std::cout << "==============================================" << std::endl;
+    std::cout << "\n===== REPORTE DE CONSUMO =====\n";
+    std::cout << "Energia Total: " << energiaTotalKWh << " kWh\n";
+    std::cout << "Costo Total Financiero: $" << costoTotalCOP << " COP\n";
+    std::cout << "==============================\n";
     
     std::cout << std::fixed << std::setprecision(2);
     

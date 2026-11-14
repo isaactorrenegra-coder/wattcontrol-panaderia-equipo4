@@ -1,13 +1,13 @@
 #include <iostream>
 #include <limits>
 #include <cstdlib>
-#include "configuracion.h"
-#include "CargaCritica.h"
-#include "CargaAplazable.h"
-#include "Negocio.h"
-#include "Mercado.h"
-#include "Medidor.h"
-#include "Reporte.h"
+#include "include/configuracion.h"
+#include "include/CargaCritica.h"
+#include "include/CargaAplazable.h"
+#include "include/Negocio.h"
+#include "include/Mercado.h"
+#include "include/Medidor.h"
+#include "include/Reporte.h"
 
 int main() {
     std::srand(SEMILLA_SIMULACION);
