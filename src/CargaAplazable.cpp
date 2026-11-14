@@ -4,17 +4,14 @@
 CargaAplazable::CargaAplazable(const std::string& nombre, double potenciaKW)
     : Carga(nombre, potenciaKW) {}
 
-bool CargaAplazable::debeEncender(int hora, double precioCOPKWh, double embalsesPct) const {
-    // Definimos un umbral de precio o de embalses crítico
-    double precioMaximoPermitido = 450.0; // Ajusta este valor según la moneda/escala de tu mercado
-    double embalsesMinimos = 30.0;       // Porcentaje mínimo de agua
+bool CargaAplazable::debeEncender(int hora, double precioCOPkWh, double embalsesPct) const {
+    const bool embalsesCriticos = embalsesPct < config::EMBALSE_ALERTA_PCT;
+    const bool horaPico = (hora >= config::PICO_INICIO && hora <= config::PICO_FIN);
+    const bool precioAlto = precioCOPkWh > config::PRECIO_CARO_COP_KWH;
 
-    // Si la energía está muy cara o los embalses están muy bajos, la carga se aplaza (retorna false)
-    if (precioCOPKWh > precioMaximoPermitido || embalsesPct < embalsesMinimos) {
-        return false; // Se apaga en esta hora para ahorrar costos/agua
-    }
+    return !(embalsesCriticos || horaPico || precioAlto);
+}
 
-    // Si las condiciones son normales, la carga opera con normalidad
+bool CargaAplazable::esAplazable() const {
     return true;
 }
-bool CargaAplazable::esAplazable() const { return true; }
