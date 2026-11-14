@@ -15,8 +15,8 @@ private:
     Mercado* mercado_;                      // Asociacion (no se hace delete)
     double costoSinGestorCOP_ = 0.0;
     int horasSimuladas_ = 17;
-    int fallasLectura_ = 0;
-    bool emergencia_ = false;
+    [[maybe_unused]] int fallasLectura_ = 0;
+    [[maybe_unused]] bool emergencia_ = false;
     bool tieneSimulacion_ = false;
 
 public:
