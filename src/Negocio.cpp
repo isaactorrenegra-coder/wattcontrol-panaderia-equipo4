@@ -4,7 +4,7 @@
 
 // Constructor de la clase Negocio (inicializa nombre, mercado y valores por defecto)
 Negocio::Negocio(const std::string& nombre, Mercado* mercado) 
-    : nombre_(nombre), mercado_(mercado), numeroCargas_(0), horasSimuladas_(0), fallasLectura_(0), emergencia_(false), tieneSimulacion_(false) {
+    : nombre_(nombre), numeroCargas_(0), mercado_(mercado), horasSimuladas_(0), fallasLectura_(0), emergencia_(false), tieneSimulacion_(false) {
     // Inicializa el arreglo de cargas en nullptr
     for (int i = 0; i < MAX_CARGAS; ++i) {
         cargas_[i] = nullptr;
