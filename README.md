@@ -222,4 +222,5 @@ Prueba 1
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | **P01** | **Entrada inválida** | Ingresar letras o valores fuera de rango (ej. hora `25` o precio `-100`). | Capturar error con `std::cin.clear()`, mostrar advertencia y reintentar[cite: 2]. | **Aprobado** (El bucle `do-while` blinda el menú correctamente)[cite: 2]. | ![Prueba P01]("C:\Users\Mi equipo\Desktop\wattcontrol-panaderia-equipo4\IMG\P01.png") |
 
-| 
+| | **P02** | **Hora pico** | Simular o registrar consumo en horas de alta demanda tarifaria. | Evaluar tarifas elevadas y aplicar restricciones según reglas del negocio. | **Aprobado** (El sistema procesa la tarifa punta hora a hora). | ![Prueba P02]("C:\Users\Mi equipo\Desktop\wattcontrol-panaderia-equipo4\IMG\P02.png") |
+| |**P03** | **Embalses < 40%** | Ingresar un nivel crítico de embalses menor al 40% (ej. `35%`)[cite: 2]. | Detectar alerta hídrica a través del módulo Mercado y ajustar cargas. | **Aprobado** (Actualiza correctamente y modifica el comportamiento)[cite: 2]. | ![Prueba P03]("C:\Users\Mi equipo\Desktop\wattcontrol-panaderia-equipo4\IMG\P03.png") |
