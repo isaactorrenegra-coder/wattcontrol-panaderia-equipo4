@@ -1,227 +1,214 @@
-<mxfile host="app.diagrams.net" modified="2026-11-14T23:55:00.000Z" agent="Mozilla/5.0" version="24.7.17" type="device">
-  <diagram id="wattcontrol-uml-fixed" name="UML WattControl">
-    <mxGraphModel dx="1520" dy="1020" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1440" pageHeight="1010" math="0" shadow="0">
+<mxfile host="app.diagrams.net">
+  <diagram name="WattControl · UML" id="vK6yTivkf68RJpUbUmHT">
+    <mxGraphModel dx="461" dy="519" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" background="light-dark(#FFFFFF,transparent)" math="0" shadow="0">
       <root>
-        <mxCell id="0"/>
-        <mxCell id="1" parent="0"/>
-
-        <!-- TÍTULO Y SUBTÍTULO -->
-        <mxCell id="title" value="WattControl — Diagrama de Clases UML" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=22;fontStyle=1;fontColor=#111827;" vertex="1" parent="1">
-          <mxGeometry x="60" y="20" width="700" height="36" as="geometry"/>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="MYSJtm0VZS8izvOKb58u-93" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=22;fontStyle=1;fontColor=#111827;" value="WattControl — Diagrama de Clases UML 2.x" vertex="1">
+          <mxGeometry height="36" width="760" x="1238.3547993321572" y="666.0967348160282" as="geometry" />
         </mxCell>
-        <mxCell id="subtitle" value="Arquitectura orientada a objetos derivada de include/, src/ y wattcontrol.cpp (Notación UML 2.x)" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=13;fontColor=#4b5563;" vertex="1" parent="1">
-          <mxGeometry x="60" y="54" width="820" height="26" as="geometry"/>
+        <mxCell id="MYSJtm0VZS8izvOKb58u-94" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=13;fontColor=#4b5563;" value="Herencia, Polimorfismo, Encapsulamiento, Abstracción, Composición, Agregación, Asociación y Dependencias" vertex="1">
+          <mxGeometry height="26" width="1020" x="1238.3547993321572" y="700.0967348160282" as="geometry" />
         </mxCell>
-
-        <!-- ==================== CLASE ABSTRACTA: CARGA ==================== -->
-        <mxCell id="carga" value="&amp;laquo;abstract&amp;raquo;&lt;br&gt;&lt;i&gt;Carga&lt;/i&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=44;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#dbeafe;strokeColor=#2563eb;fontColor=#1e3a8a;fontSize=13;" vertex="1" parent="1">
-          <mxGeometry x="60" y="130" width="370" height="365" as="geometry"/>
+        <mxCell id="MYSJtm0VZS8izvOKb58u-95" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=44;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#dbeafe;strokeColor=#2563eb;fontColor=#1e3a8a;fontSize=13;" value="&amp;laquo;abstract&amp;raquo;&lt;br&gt;&lt;i&gt;Carga&lt;/i&gt;" vertex="1">
+          <mxGeometry height="370" width="410" x="1238.3547993321572" y="778.0967348160282" as="geometry" />
         </mxCell>
-        <mxCell id="carga_attrs" value="# nombre_: string&lt;br&gt;# potenciaKW_: double&lt;br&gt;# encendida_: bool&lt;br&gt;# horasUso_: int&lt;br&gt;# energiaKWh_: double" style="text;strokeColor=none;fillColor=#eff6ff;align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;spacingTop=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;fontColor=#1f2937;" vertex="1" parent="carga">
-          <mxGeometry y="44" width="370" height="95" as="geometry"/>
+        <mxCell id="MYSJtm0VZS8izvOKb58u-96" parent="MYSJtm0VZS8izvOKb58u-95" style="text;strokeColor=none;fillColor=#eff6ff;align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;spacingTop=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;fontColor=#1f2937;" value="# nombre_: string&lt;br&gt;# potenciaKW_: double&lt;br&gt;# encendida_: bool&lt;br&gt;# horasUso_: int&lt;br&gt;# energiaKWh_: double" vertex="1">
+          <mxGeometry height="92" width="410" y="44" as="geometry" />
         </mxCell>
-        <mxCell id="carga_sep" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#2563eb;" vertex="1" parent="carga">
-          <mxGeometry y="139" width="370" height="8" as="geometry"/>
+        <mxCell id="MYSJtm0VZS8izvOKb58u-97" parent="MYSJtm0VZS8izvOKb58u-95" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#2563eb;" value="" vertex="1">
+          <mxGeometry height="8" width="410" y="136" as="geometry" />
         </mxCell>
-        <mxCell id="carga_methods" value="+ Carga(nombre: string, potenciaKW: double)&lt;br&gt;+ &lt;i&gt;~Carga()&lt;/i&gt; {virtual}&lt;br&gt;+ &lt;i&gt;debeEncender(hora: int, precio: double, embalses: double): bool&lt;/i&gt;&lt;br&gt;+ &lt;i&gt;esAplazable(): bool&lt;/i&gt;&lt;br&gt;+ fijarEncendida(encendida: bool): void&lt;br&gt;+ registrarHora(): void&lt;br&gt;+ reiniciar(): void&lt;br&gt;+ nombre(): const string&amp;amp; {query}&lt;br&gt;+ potenciaKW(): double {query}&lt;br&gt;+ encendida(): bool {query}&lt;br&gt;+ horasUso(): int {query}&lt;br&gt;+ energiaKWh(): double {query}" style="text;strokeColor=none;fillColor=#eff6ff;align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;spacingTop=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;fontColor=#1f2937;" vertex="1" parent="carga">
-          <mxGeometry y="147" width="370" height="218" as="geometry"/>
+        <mxCell id="MYSJtm0VZS8izvOKb58u-98" parent="MYSJtm0VZS8izvOKb58u-95" style="text;strokeColor=none;fillColor=#eff6ff;align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;spacingTop=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;fontColor=#1f2937;" value="+ Carga(nombre: string, potenciaKW: double)&lt;br&gt;+ &lt;i&gt;~Carga()&lt;/i&gt; {virtual}&lt;br&gt;+ &lt;i&gt;debeEncender(hora: int, precio: double, embalses: double): bool&lt;/i&gt; {abstract}&lt;br&gt;+ &lt;i&gt;esAplazable(): bool&lt;/i&gt; {abstract}&lt;br&gt;+ fijarEncendida(encendida: bool): void&lt;br&gt;+ registrarHora(): void&lt;br&gt;+ reiniciar(): void&lt;br&gt;+ nombre(): const string&amp;amp; {query}&lt;br&gt;+ potenciaKW(): double {query}&lt;br&gt;+ encendida(): bool {query}&lt;br&gt;+ horasUso(): int {query}&lt;br&gt;+ energiaKWh(): double {query}" vertex="1">
+          <mxGeometry height="226" width="410" y="144" as="geometry" />
         </mxCell>
-
-        <!-- ==================== SUBCLASE: CARGA APLAZABLE ==================== -->
-        <mxCell id="aplazable" value="CargaAplazable" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=32;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#dcfce7;strokeColor=#16a34a;fontColor=#14532d;fontSize=13;" vertex="1" parent="1">
-          <mxGeometry x="500" y="130" width="370" height="124" as="geometry"/>
+        <mxCell id="MYSJtm0VZS8izvOKb58u-99" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=32;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#dcfce7;strokeColor=#16a34a;fontColor=#14532d;fontSize=13;" value="CargaAplazable" vertex="1">
+          <mxGeometry height="136" width="430" x="1758.3547993321572" y="778.0967348160282" as="geometry" />
         </mxCell>
-        <mxCell id="aplazable_attrs" value="" style="text;strokeColor=none;fillColor=#f0fdf4;align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" vertex="1" parent="aplazable">
-          <mxGeometry y="32" width="370" height="16" as="geometry"/>
+        <mxCell id="MYSJtm0VZS8izvOKb58u-100" parent="MYSJtm0VZS8izvOKb58u-99" style="text;strokeColor=none;fillColor=#f0fdf4;align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;spacingTop=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=10;" value="&lt;font color=&quot;#6b7280&quot;&gt;&lt;i&gt;// Hereda atributos protegidos (#) de Carga&lt;/i&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="24" width="430" y="32" as="geometry" />
         </mxCell>
-        <mxCell id="aplazable_sep" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#16a34a;" vertex="1" parent="aplazable">
-          <mxGeometry y="48" width="370" height="8" as="geometry"/>
+        <mxCell id="MYSJtm0VZS8izvOKb58u-101" parent="MYSJtm0VZS8izvOKb58u-99" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#16a34a;" value="" vertex="1">
+          <mxGeometry height="8" width="430" y="56" as="geometry" />
         </mxCell>
-        <mxCell id="aplazable_methods" value="+ CargaAplazable(nombre: string, potenciaKW: double)&lt;br&gt;+ debeEncender(hora: int, precio: double, embalses: double): bool&lt;br&gt;+ esAplazable(): bool" style="text;strokeColor=none;fillColor=#f0fdf4;align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;spacingTop=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;fontColor=#1f2937;" vertex="1" parent="aplazable">
-          <mxGeometry y="56" width="370" height="68" as="geometry"/>
+        <mxCell id="MYSJtm0VZS8izvOKb58u-102" parent="MYSJtm0VZS8izvOKb58u-99" style="text;strokeColor=none;fillColor=#f0fdf4;align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;spacingTop=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;fontColor=#1f2937;" value="+ CargaAplazable(nombre: string, potenciaKW: double)&lt;br&gt;+ &amp;laquo;override&amp;raquo; debeEncender(hora: int, precio: double, embalses: double): bool&lt;br&gt;+ &amp;laquo;override&amp;raquo; esAplazable(): bool" vertex="1">
+          <mxGeometry height="72" width="430" y="64" as="geometry" />
         </mxCell>
-
-        <!-- ==================== SUBCLASE: CARGA CRÍTICA ==================== -->
-        <mxCell id="critica" value="CargaCritica" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=32;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#fef3c7;strokeColor=#d97706;fontColor=#78350f;fontSize=13;" vertex="1" parent="1">
-          <mxGeometry x="500" y="290" width="370" height="124" as="geometry"/>
+        <mxCell id="MYSJtm0VZS8izvOKb58u-103" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=32;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#fef3c7;strokeColor=#d97706;fontColor=#78350f;fontSize=13;" value="CargaCritica" vertex="1">
+          <mxGeometry height="136" width="430" x="1758.3547993321572" y="953.0967348160282" as="geometry" />
         </mxCell>
-        <mxCell id="critica_attrs" value="" style="text;strokeColor=none;fillColor=#fffbeb;align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;" vertex="1" parent="critica">
-          <mxGeometry y="32" width="370" height="16" as="geometry"/>
+        <mxCell id="MYSJtm0VZS8izvOKb58u-104" parent="MYSJtm0VZS8izvOKb58u-103" style="text;strokeColor=none;fillColor=#fffbeb;align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;spacingTop=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=10;" value="&lt;font color=&quot;#6b7280&quot;&gt;&lt;i&gt;// Hereda atributos protegidos (#) de Carga&lt;/i&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="24" width="430" y="32" as="geometry" />
         </mxCell>
-        <mxCell id="critica_sep" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#d97706;" vertex="1" parent="critica">
-          <mxGeometry y="48" width="370" height="8" as="geometry"/>
+        <mxCell id="MYSJtm0VZS8izvOKb58u-105" parent="MYSJtm0VZS8izvOKb58u-103" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#d97706;" value="" vertex="1">
+          <mxGeometry height="8" width="430" y="56" as="geometry" />
         </mxCell>
-        <mxCell id="critica_methods" value="+ CargaCritica(nombre: string, potenciaKW: double)&lt;br&gt;+ debeEncender(hora: int, precio: double, embalses: double): bool&lt;br&gt;+ esAplazable(): bool" style="text;strokeColor=none;fillColor=#fffbeb;align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;spacingTop=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;fontColor=#1f2937;" vertex="1" parent="critica">
-          <mxGeometry y="56" width="370" height="68" as="geometry"/>
+        <mxCell id="MYSJtm0VZS8izvOKb58u-106" parent="MYSJtm0VZS8izvOKb58u-103" style="text;strokeColor=none;fillColor=#fffbeb;align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;spacingTop=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;fontColor=#1f2937;" value="+ CargaCritica(nombre: string, potenciaKW: double)&lt;br&gt;+ &amp;laquo;override&amp;raquo; debeEncender(hora: int, precio: double, embalses: double): bool&lt;br&gt;+ &amp;laquo;override&amp;raquo; esAplazable(): bool" vertex="1">
+          <mxGeometry height="72" width="430" y="64" as="geometry" />
         </mxCell>
-
-        <!-- ==================== CLASE PRINCIPAL: NEGOCIO ==================== -->
-        <mxCell id="negocio" value="Negocio" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=32;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#fee2e2;strokeColor=#dc2626;fontColor=#7f1d1d;fontSize=13;" vertex="1" parent="1">
-          <mxGeometry x="460" y="540" width="430" height="372" as="geometry"/>
+        <mxCell id="MYSJtm0VZS8izvOKb58u-107" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=32;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#fee2e2;strokeColor=#dc2626;fontColor=#7f1d1d;fontSize=13;" value="Negocio" vertex="1">
+          <mxGeometry height="385" width="460" x="1728.3547993321572" y="1188.0967348160282" as="geometry" />
         </mxCell>
-        <mxCell id="negocio_attrs" value="- nombre_: string&lt;br&gt;- medidor_: Medidor&lt;br&gt;- cargas_: Carga*[MAX_CARGAS]&lt;br&gt;- numeroCargas_: int&lt;br&gt;- mercado_: Mercado*&lt;br&gt;- costoSinGestorCOP_: double&lt;br&gt;- horasSimuladas_: int&lt;br&gt;- fallasLectura_: int&lt;br&gt;- emergencia_: bool&lt;br&gt;- tieneSimulacion_: bool" style="text;strokeColor=none;fillColor=#fef2f2;align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;spacingTop=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;fontColor=#1f2937;" vertex="1" parent="negocio">
-          <mxGeometry y="32" width="430" height="182" as="geometry"/>
+        <mxCell id="MYSJtm0VZS8izvOKb58u-108" parent="MYSJtm0VZS8izvOKb58u-107" style="text;strokeColor=none;fillColor=#fef2f2;align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;spacingTop=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;fontColor=#1f2937;" value="- nombre_: string&lt;br&gt;- medidor_: Medidor&lt;br&gt;- cargas_: Carga*[MAX_CARGAS]&lt;br&gt;- numeroCargas_: int&lt;br&gt;- mercado_: Mercado*&lt;br&gt;- costoSinGestorCOP_: double&lt;br&gt;- horasSimuladas_: int&lt;br&gt;- fallasLectura_: int&lt;br&gt;- emergencia_: bool&lt;br&gt;- tieneSimulacion_: bool" vertex="1">
+          <mxGeometry height="182" width="460" y="32" as="geometry" />
         </mxCell>
-        <mxCell id="negocio_sep" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#dc2626;" vertex="1" parent="negocio">
-          <mxGeometry y="214" width="430" height="8" as="geometry"/>
+        <mxCell id="MYSJtm0VZS8izvOKb58u-109" parent="MYSJtm0VZS8izvOKb58u-107" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#dc2626;" value="" vertex="1">
+          <mxGeometry height="8" width="460" y="214" as="geometry" />
         </mxCell>
-        <mxCell id="negocio_methods" value="+ Negocio(nombre: string, mercado: Mercado*)&lt;br&gt;+ agregarCarga(carga: Carga*): bool&lt;br&gt;+ evaluarCargas(hora: int, precio: double, embalses: double): void&lt;br&gt;+ registrarConsumoHora(precio: double): void&lt;br&gt;+ simularDia(): void&lt;br&gt;+ mostrarResumen(): void&lt;br&gt;+ costoSinGestorCOP(): double {query}&lt;br&gt;+ ahorroCOP(): double {query}" style="text;strokeColor=none;fillColor=#fef2f2;align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;spacingTop=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;fontColor=#1f2937;" vertex="1" parent="negocio">
-          <mxGeometry y="222" width="430" height="150" as="geometry"/>
+        <mxCell id="MYSJtm0VZS8izvOKb58u-110" parent="MYSJtm0VZS8izvOKb58u-107" style="text;strokeColor=none;fillColor=#fef2f2;align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;spacingTop=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;fontColor=#1f2937;" value="+ Negocio(nombre: string, mercado: Mercado*)&lt;br&gt;+ agregarCarga(carga: Carga*): bool&lt;br&gt;+ evaluarCargas(hora: int, precio: double, embalses: double): void&lt;br&gt;+ registrarConsumoHora(precio: double): void&lt;br&gt;+ simularDia(): void&lt;br&gt;+ mostrarResumen(): void&lt;br&gt;+ costoSinGestorCOP(): double {query}&lt;br&gt;+ ahorroCOP(): double {query}" vertex="1">
+          <mxGeometry height="163" width="460" y="222" as="geometry" />
         </mxCell>
-
-        <!-- ==================== CLASE: MEDIDOR ==================== -->
-        <mxCell id="medidor" value="Medidor" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=32;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ede9fe;strokeColor=#7c3aed;fontColor=#4c1d95;fontSize=13;" vertex="1" parent="1">
-          <mxGeometry x="980" y="460" width="320" height="166" as="geometry"/>
+        <mxCell id="MYSJtm0VZS8izvOKb58u-111" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=32;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ede9fe;strokeColor=#7c3aed;fontColor=#4c1d95;fontSize=13;" value="Medidor" vertex="1">
+          <mxGeometry height="170" width="350" x="2358.354799332157" y="1168.0967348160282" as="geometry" />
         </mxCell>
-        <mxCell id="medidor_attrs" value="- energiaTotalKWh_: double&lt;br&gt;- costoTotalCOP_: double" style="text;strokeColor=none;fillColor=#f5f3ff;align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;spacingTop=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;fontColor=#1f2937;" vertex="1" parent="medidor">
-          <mxGeometry y="32" width="320" height="44" as="geometry"/>
+        <mxCell id="MYSJtm0VZS8izvOKb58u-112" parent="MYSJtm0VZS8izvOKb58u-111" style="text;strokeColor=none;fillColor=#f5f3ff;align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;spacingTop=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;fontColor=#1f2937;" value="- energiaTotalKWh_: double&lt;br&gt;- costoTotalCOP_: double" vertex="1">
+          <mxGeometry height="44" width="350" y="32" as="geometry" />
         </mxCell>
-        <mxCell id="medidor_sep" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#7c3aed;" vertex="1" parent="medidor">
-          <mxGeometry y="76" width="320" height="8" as="geometry"/>
+        <mxCell id="MYSJtm0VZS8izvOKb58u-113" parent="MYSJtm0VZS8izvOKb58u-111" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#7c3aed;" value="" vertex="1">
+          <mxGeometry height="8" width="350" y="76" as="geometry" />
         </mxCell>
-        <mxCell id="medidor_methods" value="+ reiniciar(): void&lt;br&gt;+ registrarHora(potencia: double, precio: double): void&lt;br&gt;+ energiaTotalKWh(): double {query}&lt;br&gt;+ costoTotalCOP(): double {query}" style="text;strokeColor=none;fillColor=#f5f3ff;align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;spacingTop=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;fontColor=#1f2937;" vertex="1" parent="medidor">
-          <mxGeometry y="84" width="320" height="82" as="geometry"/>
+        <mxCell id="MYSJtm0VZS8izvOKb58u-114" parent="MYSJtm0VZS8izvOKb58u-111" style="text;strokeColor=none;fillColor=#f5f3ff;align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;spacingTop=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;fontColor=#1f2937;" value="+ reiniciar(): void&lt;br&gt;+ registrarHora(potencia: double, precio: double): void&lt;br&gt;+ energiaTotalKWh(): double {query}&lt;br&gt;+ costoTotalCOP(): double {query}" vertex="1">
+          <mxGeometry height="86" width="350" y="84" as="geometry" />
         </mxCell>
-
-        <!-- ==================== CLASE: MERCADO ==================== -->
-        <mxCell id="mercado" value="Mercado" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=32;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#fce7f3;strokeColor=#db2777;fontColor=#831843;fontSize=13;" vertex="1" parent="1">
-          <mxGeometry x="980" y="670" width="320" height="132" as="geometry"/>
+        <mxCell id="MYSJtm0VZS8izvOKb58u-115" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=32;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#fce7f3;strokeColor=#db2777;fontColor=#831843;fontSize=13;" value="Mercado" vertex="1">
+          <mxGeometry height="140" width="350" x="2358.354799332157" y="1383.0967348160282" as="geometry" />
         </mxCell>
-        <mxCell id="mercado_attrs" value="- embalsesPct_: double" style="text;strokeColor=none;fillColor=#fdf2f8;align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;spacingTop=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;fontColor=#1f2937;" vertex="1" parent="mercado">
-          <mxGeometry y="32" width="320" height="27" as="geometry"/>
+        <mxCell id="MYSJtm0VZS8izvOKb58u-116" parent="MYSJtm0VZS8izvOKb58u-115" style="text;strokeColor=none;fillColor=#fdf2f8;align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;spacingTop=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;fontColor=#1f2937;" value="- embalsesPct_: double" vertex="1">
+          <mxGeometry height="28" width="350" y="32" as="geometry" />
         </mxCell>
-        <mxCell id="mercado_sep" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#db2777;" vertex="1" parent="mercado">
-          <mxGeometry y="59" width="320" height="8" as="geometry"/>
+        <mxCell id="MYSJtm0VZS8izvOKb58u-117" parent="MYSJtm0VZS8izvOKb58u-115" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#db2777;" value="" vertex="1">
+          <mxGeometry height="8" width="350" y="60" as="geometry" />
         </mxCell>
-        <mxCell id="mercado_methods" value="+ precioHora(hora: int): double {query}&lt;br&gt;+ nivelEmbalses(): double {query}&lt;br&gt;+ actualizarNivelEmbalses(nivel: double): void" style="text;strokeColor=none;fillColor=#fdf2f8;align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;spacingTop=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;fontColor=#1f2937;" vertex="1" parent="mercado">
-          <mxGeometry y="67" width="320" height="65" as="geometry"/>
+        <mxCell id="MYSJtm0VZS8izvOKb58u-118" parent="MYSJtm0VZS8izvOKb58u-115" style="text;strokeColor=none;fillColor=#fdf2f8;align=left;verticalAlign=top;spacingLeft=10;spacingRight=10;spacingTop=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=11;fontColor=#1f2937;" value="+ precioHora(hora: int): double {query}&lt;br&gt;+ nivelEmbalses(): double {query}&lt;br&gt;+ actualizarNivelEmbalses(nivel: double): void" vertex="1">
+          <mxGeometry height="72" width="350" y="68" as="geometry" />
         </mxCell>
-
-        <!-- ==================== MÓDULOS AUXILIARES Y ENTRADA ==================== -->
-        <mxCell id="config" value="&lt;b&gt;&amp;laquo;namespace&amp;raquo; config&lt;/b&gt;&lt;hr&gt;&lt;div align=&quot;left&quot;&gt;• Potencias y límites (MAX_CARGAS)&lt;br&gt;• Tarifas / precios por franja horaria&lt;br&gt;• Umbrales de precio y nivel de embalses&lt;br&gt;• Horas mínimas y semilla aleatoria&lt;/div&gt;" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#f3f4f6;strokeColor=#6b7280;fontColor=#1f2937;fontSize=11;spacing=8;" vertex="1" parent="1">
-          <mxGeometry x="980" y="130" width="320" height="130" as="geometry"/>
+        <mxCell id="MYSJtm0VZS8izvOKb58u-119" parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#f3f4f6;strokeColor=#6b7280;fontColor=#1f2937;fontSize=11;spacing=8;" value="&lt;b&gt;&amp;laquo;namespace&amp;raquo; config&lt;/b&gt;&lt;hr&gt;&lt;div align=&quot;left&quot;&gt;• Potencias y límites (MAX_CARGAS)&lt;br&gt;• Tarifas / precios por franja horaria&lt;br&gt;• Umbrales de precio y nivel de embalses&lt;br&gt;• Horas mínimas y semilla aleatoria&lt;/div&gt;" vertex="1">
+          <mxGeometry height="135" width="350" x="2358.354799332157" y="778.0967348160282" as="geometry" />
         </mxCell>
-
-        <mxCell id="reporte" value="&lt;b&gt;&amp;laquo;utility / function&amp;raquo; Reporte&lt;/b&gt;&lt;hr&gt;&lt;div align=&quot;left&quot;&gt;+ generarReporteConsumo(&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;energiaTotalKWh: double,&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;costoTotalCOP: double): void&lt;br&gt;&lt;i&gt;Definida en src/Reporte.cpp&lt;/i&gt;&lt;/div&gt;" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#f3f4f6;strokeColor=#6b7280;fontColor=#1f2937;fontSize=11;spacing=8;" vertex="1" parent="1">
-          <mxGeometry x="980" y="295" width="320" height="125" as="geometry"/>
+        <mxCell id="MYSJtm0VZS8izvOKb58u-120" parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#f3f4f6;strokeColor=#6b7280;fontColor=#1f2937;fontSize=11;spacing=8;" value="&lt;b&gt;&amp;laquo;utility / function&amp;raquo; Reporte&lt;/b&gt;&lt;hr&gt;&lt;div align=&quot;left&quot;&gt;+ generarReporteConsumo(&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;energiaTotalKWh: double,&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;costoTotalCOP: double): void&lt;br&gt;&lt;i&gt;Definida en src/Reporte.cpp&lt;/i&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="130" width="350" x="2358.354799332157" y="953.0967348160282" as="geometry" />
         </mxCell>
-
-        <mxCell id="main" value="&lt;b&gt;&amp;laquo;executable&amp;raquo; main() — wattcontrol.cpp&lt;/b&gt;&lt;hr&gt;&lt;div align=&quot;left&quot;&gt;• Instancia Mercado, Cargas y Negocio&lt;br&gt;• Registra las cargas en Negocio&lt;br&gt;• Controla el menú interactivo de consola&lt;br&gt;• Libera la memoria dinámica de Carga*&lt;/div&gt;" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#f3f4f6;strokeColor=#6b7280;fontColor=#1f2937;fontSize=11;spacing=8;" vertex="1" parent="1">
-          <mxGeometry x="60" y="600" width="290" height="150" as="geometry"/>
+        <mxCell id="MYSJtm0VZS8izvOKb58u-121" parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#f3f4f6;strokeColor=#6b7280;fontColor=#1f2937;fontSize=11;spacing=8;" value="&lt;b&gt;&amp;laquo;executable&amp;raquo; main() — wattcontrol.cpp&lt;/b&gt;&lt;hr&gt;&lt;div align=&quot;left&quot;&gt;• Instancia Mercado, Negocio y cargas concretas&lt;br&gt;• Inyecta CargaAplazable / CargaCritica como Carga*&lt;br&gt;• Controla el menú interactivo de consola&lt;br&gt;• Libera memoria dinámica (delete cargas)&lt;/div&gt;" vertex="1">
+          <mxGeometry height="155" width="320" x="1238.3547993321572" y="1233.0967348160282" as="geometry" />
         </mxCell>
-
-        <mxCell id="legend" value="&lt;b&gt;Leyenda UML 2.x&lt;/b&gt;&lt;hr&gt;&lt;div align=&quot;left&quot;&gt;&lt;b&gt;◆——&lt;/b&gt; Composición: Negocio posee ciclo de vida de Medidor&lt;br&gt;&lt;b&gt;◇——&lt;/b&gt; Agregación: Negocio referencia Carga* sin poseerla&lt;br&gt;&lt;b&gt;──▷&lt;/b&gt; Generalización (Herencia pública en C++)&lt;br&gt;&lt;b&gt;──&amp;gt;&lt;/b&gt; Asociación dirigida / &lt;b&gt;- - &amp;gt;&lt;/b&gt; Dependencia (&amp;laquo;use&amp;raquo; / &amp;laquo;call&amp;raquo;)&lt;/div&gt;" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#fffbeb;strokeColor=#d97706;fontColor=#1f2937;fontSize=11;spacing=8;" vertex="1" parent="1">
-          <mxGeometry x="60" y="790" width="330" height="140" as="geometry"/>
+        <mxCell id="MYSJtm0VZS8izvOKb58u-122" parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#eff6ff;strokeColor=#2563eb;fontColor=#1f2937;fontSize=11;spacing=8;" value="&lt;b&gt;Pilares POO aplicados en el repositorio&lt;/b&gt;&lt;hr&gt;&lt;div align=&quot;left&quot;&gt;&lt;b&gt;1. Abstracción:&lt;/b&gt; &lt;i&gt;Carga&lt;/i&gt; define el contrato base sin instanciarse.&lt;br&gt;&lt;b&gt;2. Encapsulamiento:&lt;/b&gt; Atributos privados (&lt;b&gt;-&lt;/b&gt;) y protegidos (&lt;b&gt;#&lt;/b&gt;); getters &lt;b&gt;{query}&lt;/b&gt; (&lt;code&gt;const&lt;/code&gt;).&lt;br&gt;&lt;b&gt;3. Herencia:&lt;/b&gt; &lt;i&gt;CargaAplazable&lt;/i&gt; y &lt;i&gt;CargaCritica&lt;/i&gt; extienden &lt;i&gt;Carga&lt;/i&gt;.&lt;br&gt;&lt;b&gt;4. Polimorfismo:&lt;/b&gt; &lt;i&gt;Negocio&lt;/i&gt; ejecuta &lt;code&gt;cargas_[i]-&amp;gt;debeEncender()&lt;/code&gt; por enlace dinámico (&lt;code&gt;virtual&lt;/code&gt; / &lt;code&gt;override&lt;/code&gt;).&lt;/div&gt;" vertex="1">
+          <mxGeometry height="165" width="425" x="1238.3547993321572" y="1413.0967348160282" as="geometry" />
         </mxCell>
-
-        <!-- ==================== RELACIONES UML ==================== -->
-
-        <!-- Herencia: CargaAplazable -> Carga -->
-        <mxCell id="inherit1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=0;endSize=12;strokeWidth=1.5;strokeColor=#1f2937;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.17;entryDx=0;entryDy=0;" edge="1" parent="1" source="aplazable" target="carga">
-          <mxGeometry relative="1" as="geometry"/>
+        <mxCell id="MYSJtm0VZS8izvOKb58u-123" parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#fffbeb;strokeColor=#d97706;fontColor=#1f2937;fontSize=11;spacing=8;" value="&lt;b&gt;Leyenda de Relaciones UML 2.x&lt;/b&gt;&lt;hr&gt;&lt;div align=&quot;left&quot;&gt;&lt;b&gt;◆——&lt;/b&gt; &lt;b&gt;Composición:&lt;/b&gt; Negocio posee por valor a Medidor (mismo ciclo de vida) &amp;nbsp;|&amp;nbsp; &lt;b&gt;◇——&amp;gt;&lt;/b&gt; &lt;b&gt;Agregación polimórfica:&lt;/b&gt; Negocio referencia Carga* sin poseer su memoria&lt;br&gt;&lt;b&gt;──▷&lt;/b&gt; &lt;b&gt;Herencia / Generalización:&lt;/b&gt; Subclase extiende a Carga &amp;nbsp;|&amp;nbsp; &lt;b&gt;──&amp;gt;&lt;/b&gt; &lt;b&gt;Asociación:&lt;/b&gt; Navegabilidad hacia Mercado &amp;nbsp;|&amp;nbsp; &lt;b&gt;- - &amp;gt;&lt;/b&gt; &lt;b&gt;Dependencia:&lt;/b&gt; &amp;laquo;use&amp;raquo;, &amp;laquo;call&amp;raquo;, &amp;laquo;instantiate&amp;raquo;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="92" width="1470" x="1238.3547993321572" y="1623.0967348160282" as="geometry" />
         </mxCell>
-
-        <!-- Herencia: CargaCritica -> Carga -->
-        <mxCell id="inherit2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=0;endSize=12;strokeWidth=1.5;strokeColor=#1f2937;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.61;entryDx=0;entryDy=0;" edge="1" parent="1" source="critica" target="carga">
-          <mxGeometry relative="1" as="geometry"/>
+        <mxCell id="MYSJtm0VZS8izvOKb58u-124" edge="1" parent="1" source="MYSJtm0VZS8izvOKb58u-99" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=0;endSize=13;strokeWidth=1.6;strokeColor=#16a34a;fontColor=#14532d;fontSize=10;fontStyle=1;labelBackgroundColor=#ffffff;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.18;entryDx=0;entryDy=0;" target="MYSJtm0VZS8izvOKb58u-95" value="&amp;laquo;herencia&amp;raquo;">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
-
-        <!-- Composición: Negocio ◆—— Medidor (Rombo relleno en Negocio) -->
-        <mxCell id="compose" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=diamond;startFill=1;startSize=13;endArrow=none;strokeWidth=1.6;strokeColor=#1f2937;exitX=1;exitY=0.14;exitDx=0;exitDy=0;entryX=0;entryY=0.8;entryDx=0;entryDy=0;" edge="1" parent="1" source="negocio" target="medidor">
-          <mxGeometry relative="1" as="geometry"/>
+        <mxCell id="MYSJtm0VZS8izvOKb58u-125" edge="1" parent="1" source="MYSJtm0VZS8izvOKb58u-103" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=0;endSize=13;strokeWidth=1.6;strokeColor=#d97706;fontColor=#78350f;fontSize=10;fontStyle=1;labelBackgroundColor=#ffffff;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.66;entryDx=0;entryDy=0;" target="MYSJtm0VZS8izvOKb58u-95" value="&amp;laquo;herencia&amp;raquo;">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="compose_m1" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontStyle=1;labelBackgroundColor=#ffffff;" vertex="1" connectable="0" parent="compose">
-          <mxGeometry x="-0.75" y="-12" relative="1" as="geometry"><mxPoint as="offset"/></mxGeometry>
-        </mxCell>
-        <mxCell id="compose_m2" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontStyle=1;labelBackgroundColor=#ffffff;" vertex="1" connectable="0" parent="compose">
-          <mxGeometry x="0.75" y="-12" relative="1" as="geometry"><mxPoint as="offset"/></mxGeometry>
-        </mxCell>
-
-        <!-- Agregación: Negocio ◇—— Carga (Rombo hueco en Negocio) -->
-        <mxCell id="aggregate" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;startArrow=diamond;startFill=0;startSize=13;endArrow=open;endFill=0;strokeWidth=1.6;strokeColor=#1f2937;exitX=0;exitY=0.09;exitDx=0;exitDy=0;entryX=0.73;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="negocio" target="carga">
-          <mxGeometry relative="1" as="geometry">
+        <mxCell id="MYSJtm0VZS8izvOKb58u-126" edge="1" parent="1" source="MYSJtm0VZS8izvOKb58u-107" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;startArrow=diamond;startFill=0;startSize=13;endArrow=open;endFill=0;strokeWidth=1.6;strokeColor=#1d4ed8;fontColor=#1e3a8a;fontSize=10;fontStyle=1;labelBackgroundColor=#ffffff;exitX=0;exitY=0.07;exitDx=0;exitDy=0;entryX=0.89;entryY=1;entryDx=0;entryDy=0;" target="MYSJtm0VZS8izvOKb58u-95" value="&amp;laquo;agregación polimórfica&amp;raquo;&lt;br&gt;cargas_[i]">
+          <mxGeometry relative="1" x="0.05" as="geometry">
+            <mxPoint as="offset" />
             <Array as="points">
-              <mxPoint x="330" y="573"/>
+              <mxPoint x="1603.3547993321572" y="1215.0967348160282" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="agg_m1" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontStyle=1;labelBackgroundColor=#ffffff;" vertex="1" connectable="0" parent="aggregate">
-          <mxGeometry x="-0.85" y="-12" relative="1" as="geometry"><mxPoint as="offset"/></mxGeometry>
+        <mxCell id="MYSJtm0VZS8izvOKb58u-127" connectable="0" parent="MYSJtm0VZS8izvOKb58u-126" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontStyle=1;labelBackgroundColor=#ffffff;" value="1" vertex="1">
+          <mxGeometry relative="1" x="-0.88" y="-12" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
         </mxCell>
-        <mxCell id="agg_m2" value="0..* (MAX_CARGAS)" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontStyle=1;labelBackgroundColor=#ffffff;" vertex="1" connectable="0" parent="aggregate">
-          <mxGeometry x="0.68" y="14" relative="1" as="geometry"><mxPoint x="45" as="offset"/></mxGeometry>
+        <mxCell id="MYSJtm0VZS8izvOKb58u-128" connectable="0" parent="MYSJtm0VZS8izvOKb58u-126" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=10;fontStyle=1;labelBackgroundColor=#ffffff;" value="0..* (MAX_CARGAS)" vertex="1">
+          <mxGeometry relative="1" x="0.78" y="54" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
         </mxCell>
-
-        <!-- Asociación dirigida: Negocio ——> Mercado -->
-        <mxCell id="associate" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;endFill=0;endSize=10;strokeWidth=1.6;strokeColor=#1f2937;exitX=1;exitY=0.53;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="negocio" target="mercado">
-          <mxGeometry relative="1" as="geometry"/>
+        <mxCell id="MYSJtm0VZS8izvOKb58u-129" edge="1" parent="1" source="MYSJtm0VZS8izvOKb58u-107" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=diamond;startFill=1;startSize=13;endArrow=none;strokeWidth=1.6;strokeColor=#7c3aed;fontColor=#4c1d95;fontSize=10;fontStyle=1;labelBackgroundColor=#ffffff;exitX=1;exitY=0.17;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="MYSJtm0VZS8izvOKb58u-111" value="&amp;laquo;composición&amp;raquo;&lt;br&gt;medidor_">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="assoc_m1" value="0..*" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontStyle=1;labelBackgroundColor=#ffffff;" vertex="1" connectable="0" parent="associate">
-          <mxGeometry x="-0.68" y="-12" relative="1" as="geometry"><mxPoint as="offset"/></mxGeometry>
+        <mxCell id="MYSJtm0VZS8izvOKb58u-130" connectable="0" parent="MYSJtm0VZS8izvOKb58u-129" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontStyle=1;labelBackgroundColor=#ffffff;" value="1" vertex="1">
+          <mxGeometry relative="1" x="-0.82" y="-12" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
         </mxCell>
-        <mxCell id="assoc_m2" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontStyle=1;labelBackgroundColor=#ffffff;" vertex="1" connectable="0" parent="associate">
-          <mxGeometry x="0.72" y="-12" relative="1" as="geometry"><mxPoint as="offset"/></mxGeometry>
+        <mxCell id="MYSJtm0VZS8izvOKb58u-131" connectable="0" parent="MYSJtm0VZS8izvOKb58u-129" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontStyle=1;labelBackgroundColor=#ffffff;" value="1" vertex="1">
+          <mxGeometry relative="1" x="0.82" y="-12" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
         </mxCell>
-
-        <!-- Dependencia: Carga - - > config (por corredor superior y=102) -->
-        <mxCell id="usesConfig1" value="&amp;laquo;use&amp;raquo;" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;endArrow=open;endFill=0;strokeColor=#6b7280;fontColor=#4b5563;fontSize=10;labelBackgroundColor=#ffffff;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="carga" target="config">
+        <mxCell id="MYSJtm0VZS8izvOKb58u-132" edge="1" parent="1" source="MYSJtm0VZS8izvOKb58u-107" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;endFill=0;endSize=10;strokeWidth=1.6;strokeColor=#db2777;fontColor=#831843;fontSize=10;fontStyle=1;labelBackgroundColor=#ffffff;exitX=1;exitY=0.69;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="MYSJtm0VZS8izvOKb58u-115" value="&amp;laquo;asociación&amp;raquo;&lt;br&gt;mercado_">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="MYSJtm0VZS8izvOKb58u-133" connectable="0" parent="MYSJtm0VZS8izvOKb58u-132" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontStyle=1;labelBackgroundColor=#ffffff;" value="0..*" vertex="1">
+          <mxGeometry relative="1" x="-0.78" y="-12" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="MYSJtm0VZS8izvOKb58u-134" connectable="0" parent="MYSJtm0VZS8izvOKb58u-132" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontStyle=1;labelBackgroundColor=#ffffff;" value="1" vertex="1">
+          <mxGeometry relative="1" x="0.78" y="-12" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="MYSJtm0VZS8izvOKb58u-135" edge="1" parent="1" source="MYSJtm0VZS8izvOKb58u-95" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;endArrow=open;endFill=0;strokeColor=#6b7280;fontColor=#4b5563;fontSize=10;labelBackgroundColor=#ffffff;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="MYSJtm0VZS8izvOKb58u-119" value="&amp;laquo;dependencia: use&amp;raquo;">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="245" y="102"/>
-              <mxPoint x="1140" y="102"/>
+              <mxPoint x="1443.3547993321572" y="744.0967348160282" />
+              <mxPoint x="2533.354799332157" y="744.0967348160282" />
             </Array>
           </mxGeometry>
         </mxCell>
-
-        <!-- Dependencia: Mercado - - > config (por corredor derecho x=1345) -->
-        <mxCell id="usesConfig2" value="&amp;laquo;use&amp;raquo;" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;endArrow=open;endFill=0;strokeColor=#6b7280;fontColor=#4b5563;fontSize=10;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="mercado" target="config">
+        <mxCell id="MYSJtm0VZS8izvOKb58u-136" edge="1" parent="1" source="MYSJtm0VZS8izvOKb58u-115" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;endArrow=open;endFill=0;strokeColor=#6b7280;fontColor=#4b5563;fontSize=10;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="MYSJtm0VZS8izvOKb58u-119" value="&amp;laquo;dependencia: use&amp;raquo;">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="1345" y="736"/>
-              <mxPoint x="1345" y="195"/>
+              <mxPoint x="2773.354799332157" y="1453.0967348160282" />
+              <mxPoint x="2773.354799332157" y="846.0967348160282" />
             </Array>
           </mxGeometry>
         </mxCell>
-
-        <!-- Dependencia: Negocio - - > config (por canal central x=945) -->
-        <mxCell id="usesConfig3" value="&amp;laquo;use&amp;raquo;" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;endArrow=open;endFill=0;strokeColor=#6b7280;fontColor=#4b5563;fontSize=10;labelBackgroundColor=#ffffff;exitX=1;exitY=0.04;exitDx=0;exitDy=0;entryX=0;entryY=0.65;entryDx=0;entryDy=0;" edge="1" parent="1" source="negocio" target="config">
+        <mxCell id="MYSJtm0VZS8izvOKb58u-137" edge="1" parent="1" source="MYSJtm0VZS8izvOKb58u-107" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;endArrow=open;endFill=0;strokeColor=#6b7280;fontColor=#4b5563;fontSize=10;labelBackgroundColor=#ffffff;exitX=1;exitY=0.05;exitDx=0;exitDy=0;entryX=0;entryY=0.68;entryDx=0;entryDy=0;" target="MYSJtm0VZS8izvOKb58u-119" value="&amp;laquo;dependencia: use&amp;raquo;">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="945" y="555"/>
-              <mxPoint x="945" y="215"/>
+              <mxPoint x="2303.354799332157" y="1207.0967348160282" />
+              <mxPoint x="2303.354799332157" y="870.0967348160282" />
             </Array>
           </mxGeometry>
         </mxCell>
-
-        <!-- Dependencia: Negocio - - > Reporte (por canal central x=920) -->
-        <mxCell id="usesReport" value="&amp;laquo;call&amp;raquo;" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;endArrow=open;endFill=0;strokeColor=#6b7280;fontColor=#4b5563;fontSize=10;labelBackgroundColor=#ffffff;exitX=1;exitY=0.09;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="negocio" target="reporte">
+        <mxCell id="MYSJtm0VZS8izvOKb58u-138" edge="1" parent="1" source="MYSJtm0VZS8izvOKb58u-107" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;endArrow=open;endFill=0;strokeColor=#6b7280;fontColor=#4b5563;fontSize=10;labelBackgroundColor=#ffffff;exitX=1;exitY=0.10;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="MYSJtm0VZS8izvOKb58u-120" value="&amp;laquo;dependencia: call&amp;raquo;">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="920" y="573"/>
-              <mxPoint x="920" y="358"/>
+              <mxPoint x="2253.354799332157" y="1227.0967348160282" />
+              <mxPoint x="2253.354799332157" y="1018.0967348160282" />
             </Array>
           </mxGeometry>
         </mxCell>
-
-        <!-- Dependencias desde main() -->
-        <mxCell id="creates_negocio" value="&amp;laquo;instantiate&amp;raquo;" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;endArrow=open;endFill=0;strokeColor=#6b7280;fontColor=#4b5563;fontSize=10;labelBackgroundColor=#ffffff;exitX=1;exitY=0.45;exitDx=0;exitDy=0;entryX=0;entryY=0.34;entryDx=0;entryDy=0;" edge="1" parent="1" source="main" target="negocio">
-          <mxGeometry relative="1" as="geometry"/>
+        <mxCell id="MYSJtm0VZS8izvOKb58u-139" edge="1" parent="1" source="MYSJtm0VZS8izvOKb58u-121" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;endArrow=open;endFill=0;strokeColor=#6b7280;fontColor=#4b5563;fontSize=10;labelBackgroundColor=#ffffff;exitX=1;exitY=0.50;exitDx=0;exitDy=0;entryX=0;entryY=0.32;entryDx=0;entryDy=0;" target="MYSJtm0VZS8izvOKb58u-107" value="&amp;laquo;instantiate&amp;raquo;">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
-
-        <mxCell id="creates_carga" value="&amp;laquo;instantiate&amp;raquo;" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;endArrow=open;endFill=0;strokeColor=#6b7280;fontColor=#4b5563;fontSize=10;labelBackgroundColor=#ffffff;exitX=0.45;exitY=0;exitDx=0;exitDy=0;entryX=0.35;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="main" target="carga">
-          <mxGeometry relative="1" as="geometry"/>
-        </mxCell>
-
-        <mxCell id="creates_mercado" value="&amp;laquo;instantiate&amp;raquo;" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;endArrow=open;endFill=0;strokeColor=#6b7280;fontColor=#4b5563;fontSize=10;labelBackgroundColor=#ffffff;exitX=1;exitY=0.82;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="main" target="mercado">
-          <mxGeometry relative="1" as="geometry">
+        <mxCell id="MYSJtm0VZS8izvOKb58u-140" edge="1" parent="1" source="MYSJtm0VZS8izvOKb58u-121" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;endArrow=open;endFill=0;strokeColor=#16a34a;fontColor=#14532d;fontSize=10;labelBackgroundColor=#ffffff;exitX=1;exitY=0.14;exitDx=0;exitDy=0;entryX=0;entryY=0.78;entryDx=0;entryDy=0;" target="MYSJtm0VZS8izvOKb58u-99" value="&amp;laquo;instantiate&amp;raquo;">
+          <mxGeometry relative="1" x="-0.15" as="geometry">
+            <mxPoint as="offset" />
             <Array as="points">
-              <mxPoint x="425" y="723"/>
-              <mxPoint x="425" y="950"/>
-              <mxPoint x="1140" y="950"/>
+              <mxPoint x="1683.3547993321572" y="1255.0967348160282" />
+              <mxPoint x="1683.3547993321572" y="884.0967348160282" />
             </Array>
           </mxGeometry>
         </mxCell>
-
+        <mxCell id="MYSJtm0VZS8izvOKb58u-141" edge="1" parent="1" source="MYSJtm0VZS8izvOKb58u-121" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;endArrow=open;endFill=0;strokeColor=#d97706;fontColor=#78350f;fontSize=10;labelBackgroundColor=#ffffff;exitX=1;exitY=0.30;exitDx=0;exitDy=0;entryX=0;entryY=0.78;entryDx=0;entryDy=0;" target="MYSJtm0VZS8izvOKb58u-103" value="&amp;laquo;instantiate&amp;raquo;">
+          <mxGeometry relative="1" x="-0.2" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="1703.3547993321572" y="1280.0967348160282" />
+              <mxPoint x="1703.3547993321572" y="1059.0967348160282" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="MYSJtm0VZS8izvOKb58u-142" edge="1" parent="1" source="MYSJtm0VZS8izvOKb58u-121" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;endArrow=open;endFill=0;strokeColor=#6b7280;fontColor=#4b5563;fontSize=10;labelBackgroundColor=#ffffff;exitX=1;exitY=0.85;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" target="MYSJtm0VZS8izvOKb58u-115" value="&amp;laquo;instantiate&amp;raquo;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1683.3547993321572" y="1365.0967348160282" />
+              <mxPoint x="1683.3547993321572" y="1598.0967348160282" />
+              <mxPoint x="2533.354799332157" y="1598.0967348160282" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
