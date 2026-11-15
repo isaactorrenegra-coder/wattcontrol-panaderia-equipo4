@@ -213,3 +213,14 @@ wattcontrol.exe
 En Bash ejecuta `./wattcontrol`; en CMD ejecuta `wattcontrol.exe`.
 
 [Reglas de la panadería](docs/02-tecnico/DECISIONES.md) · [Pruebas](docs/03-pruebas/PRUEBAS.md) · [Acción final](docs/04-entrega/ACCION_FINAL.md) · [Entrega individual](docs/04-entrega/GUIA_ENTREGA.md)
+Prueba 1
+# Reporte de Pruebas y Validación - WattControl
+
+## Tabla de Casos de Prueba (P01–P06)
+
+| ID Caso | Escenario / Condición | Datos de Entrada / Acción | Resultado Esperado | Resultado Real / Estado | Captura de Pantalla |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **P01** | **Entrada inválida** | Ingresar letras o valores fuera de rango (ej. hora `25` o precio `-100`). | Capturar error con `std::cin.clear()`, mostrar advertencia y reintentar[cite: 2]. | **Aprobado** (El bucle `do-while` blinda el menú correctamente)[cite: 2]. | ![Prueba P01]("C:\Users\Mi equipo\Desktop\wattcontrol-panaderia-equipo4\IMG\P01.png") |
+
+| | **P02** | **Hora pico** | Simular o registrar consumo en horas de alta demanda tarifaria. | Evaluar tarifas elevadas y aplicar restricciones según reglas del negocio. | **Aprobado** (El sistema procesa la tarifa punta hora a hora). | ![Prueba P02]("C:\Users\Mi equipo\Desktop\wattcontrol-panaderia-equipo4\IMG\P02.png") |
+| |**P03** | **Embalses < 40%** | Ingresar un nivel crítico de embalses menor al 40% (ej. `35%`)[cite: 2]. | Detectar alerta hídrica a través del módulo Mercado y ajustar cargas. | **Aprobado** (Actualiza correctamente y modifica el comportamiento)[cite: 2]. | ![Prueba P03]("C:\Users\Mi equipo\Desktop\wattcontrol-panaderia-equipo4\IMG\P03.png") |
