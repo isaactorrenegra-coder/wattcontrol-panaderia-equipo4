@@ -214,4 +214,3 @@ En Bash ejecuta `./wattcontrol`; en CMD ejecuta `wattcontrol.exe`.
 
 [Reglas de la panadería](docs/02-tecnico/DECISIONES.md) · [Pruebas](docs/03-pruebas/PRUEBAS.md) · [Acción final](docs/04-entrega/ACCION_FINAL.md) · [Entrega individual](docs/04-entrega/GUIA_ENTREGA.md)
 | **P04** | **Exceder 9 kW** | Cargar el sistema con una suma de potencia activa superior al límite de 9 kW. | Activar el mecanismo de protección por sobrecarga en la gestión de cargas. | **Aprobado** (Controla el umbral de potencia de manera óptima). | ![Prueba P04]("C:\Users\Equipo\Desktop\wattcontrol-panaderia-equipo4\img\p04.jpeg") |
-| **P05** | **Simulación de 24 horas** | Ejecutar la opción `simularDia()` del ciclo temporal completo[cite: 4]. | Recorrer de la hora 0 a la 23 acumulando kWh y COP con el `Medidor`[cite: 4, 5]. | **Aprobado** (Genera los cálculos horarios y totales con precisión)[cite: 4, 5]. | ![Prueba P05]("C:\Users\Equipo\Desktop\wattcontrol-panaderia-equipo4\img\P05.png") |
